@@ -14,10 +14,8 @@ bash "apt update" do
 	#todo only run if backports was a new addition?
 end
 
-#move to a dotfiles recipe?
-#ln -s ~/.bashrc lib/dotfiles/.bashrc
 
-
+#openbox autostart
 cookbook_file "/home/dan/.config/openbox/autostart" do
 	source "autostart.sh"
 	mode 0755
@@ -26,19 +24,30 @@ cookbook_file "/home/dan/.config/openbox/autostart" do
 end
 
 
+#auto login slim.conf
+#no, I /REALLY/ don't want to manage that whole file
+ruby_block "enable auto login" do
+	block do
+		f = Chef::Util::FileEdit.new("/etc/slim.conf")
+		f.search_file_replace_line(
+			/^\#default_user\s+.*$/i,
+			"default_user	dan"
+		)
+		f.search_file_replace_line(
+			/^\#?auto_login\s+no\s*/i,
+			"auto_login	yes"
+		)
+		f.write_file
+	end
+end
+
+
+#todo
+
+#move to a dotfiles recipe?
+#ln -s ~/.bashrc lib/dotfiles/.bashrc
+
+
 #bin
 
 #sidebar folders in thunar -- move to theming?
-
-
-## IO HACKS
-#turn off 'fn' for apple keyboard
-#echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode
-#turn off tap-to-click for trackpads
-#synclient TapButton1=0
-
-
-
-#/etc/slim.conf
-#default_user dan
-#auto_login yes
