@@ -1,3 +1,12 @@
 {
-    "run_list": [ "recipe[crunch]", "recipe[gcolor2]", "recipe[avr]", "recipe[clipit]" ]
+    "run_list": [
+    	"recipe[crunch]",
+    	"recipe[gcolor2]",
+    	"recipe[avr]",
+    	"recipe[clipit]",
+    	"recipe[dns]",
+    	"recipe[gifsicle]",
+    	"recipe[latex]",
+    	"recipe[x11-dev]"
+    ]
 }
