@@ -8,6 +8,7 @@
     	"recipe[gifsicle]",
     	"recipe[latex]",
     	"recipe[x11-dev]",
-    	"recipe[calibre]"
+    	"recipe[calibre]",
+    	"recipe[mongo]"
     ]
 }
