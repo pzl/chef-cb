@@ -7,6 +7,7 @@
     	"recipe[dns]",
     	"recipe[gifsicle]",
     	"recipe[latex]",
-    	"recipe[x11-dev]"
+    	"recipe[x11-dev]",
+    	"recipe[calibre]"
     ]
 }

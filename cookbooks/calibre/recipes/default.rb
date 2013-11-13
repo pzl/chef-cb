@@ -7,10 +7,11 @@ remote_file fp do
 	mode 0755
 	action :create_if_missing
 	not_if { ::File.exists?(calibre_path+"/calibre") }
-	notifies :run, "execute[python-calibre]"
+	notifies :run, "execute[python-calibre]", :immediately
 end
 
 execute "python-calibre" do
-	command "CALIBRE_INSTALL_DIR=#{calibre_path} python #{fp}"
+	command "python #{fp}"
+	environment ({ "CALIBRE_INSTALL_DIR" => calibre_path, "PYTHONIOENCODING"=>'UTF-8' })
 	action :nothing
 end
