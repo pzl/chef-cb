@@ -1,5 +1,16 @@
 #calibre
-cd /home/dan;
-sudo python -c "import sys; py3 = sys.version_info[0] > 2; u = __import__('urllib.request' if py3 else 'urllib', fromlist=1); exec(u.urlopen('http://status.calibre-ebook.com/linux_installer').read()); main()"
+fp = "#{Chef::Config['file_cache_path']}/calibre_install"
+calibre_path = "/usr/local"
 
-#there must be a better way.
+remote_file fp do
+	source "http://status.calibre-ebook.com/linux_installer"
+	mode 0755
+	action :create_if_missing
+	not_if { ::File.exists?(calibre_path+"/calibre") }
+	notifies :run, "execute[python-calibre]"
+end
+
+execute "python-calibre" do
+	command "CALIBRE_INSTALL_DIR=#{calibre_path} python #{fp}"
+	action :nothing
+end
