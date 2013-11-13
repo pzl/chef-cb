@@ -1,2 +1,3 @@
-#kill
-#--purge remove
+package 'clipit' do
+	action :purge #we hates the clipit
+end
