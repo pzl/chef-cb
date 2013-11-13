@@ -1,0 +1,2 @@
+NODEV=$(curl -s http://nodejs.org/dist/latest/SHASUMS.txt | head -n 1 | sed 's/.*node-v\([0-9]\+\.[0-9]\+\.[0-9]\+\).*/\1/i')
+cd /tmp; wget http://nodejs.org/dist/latest/node-v$NODEV.tar.gz; tar -xzf node-v$NODEV.tar.gz; cd node-v$NODEV; ./configure; make; sudo make install; cd /tmp; rm -rf node-v$NODEV node-v$NODEV.tar.gz
