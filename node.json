@@ -11,6 +11,7 @@
     	"recipe[calibre]",
     	"recipe[mongo]",
     	"recipe[nginx]",
-    	"recipe[node]"
+    	"recipe[node]",
+    	"recipe[sensors]"
     ]
 }

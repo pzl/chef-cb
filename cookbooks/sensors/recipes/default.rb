@@ -1,3 +1,9 @@
-package 'lm-sensors'
+package 'lm-sensors' do
+	#notifies :run, "execute[sensors-detect]", :immediately
+end
 
-sudo sensors-detect #auto-yes?
+#may be dangerous to automate...
+execute "sensors-detect" do
+	command "sensors-detect"
+	action :nothing
+end
