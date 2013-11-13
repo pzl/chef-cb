@@ -12,6 +12,7 @@
     	"recipe[mongo]",
     	"recipe[nginx]",
     	"recipe[node]",
-    	"recipe[sensors]"
+    	"recipe[sensors]",
+    	"recipe[terminus]"
     ]
 }
