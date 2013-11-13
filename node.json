@@ -20,6 +20,7 @@
     	"recipe[git]",
     	"recipe[conky]",
     	"recipe[heroku]",
-    	"recipe[moc]"
+    	"recipe[moc]",
+    	"recipe[chrome]"
     ]
 }

@@ -1,0 +1,431 @@
+{
+   "checksum": "13cabfac642368870b800fcd302fb583",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13005632744734976",
+            "id": "4",
+            "name": "",
+            "type": "url",
+            "url": "https://www.facebook.com/"
+         }, {
+            "date_added": "13005707376793246",
+            "id": "10",
+            "name": "",
+            "type": "url",
+            "url": "https://turntable.fm/lobby"
+         }, {
+            "date_added": "13005728058045572",
+            "id": "11",
+            "name": "Lua",
+            "type": "url",
+            "url": "http://crunchbang.org/forums/viewtopic.php?id=17246"
+         }, {
+            "date_added": "13013195905828348",
+            "id": "25",
+            "name": "Big YT",
+            "type": "url",
+            "url": "javascript:n=document.getElementById('player-api'); if (n){ n.setAttribute('style','height:706px;width:1200px;');document.getElementById('player-api-legacy').setAttribute('style','height:706px;width:1200px;');} else { document.getElementById('p').setAttribute('style','height:706px;width:1200px;'); document.getElementById('lc').setAttribute('style','width:auto;'); document.getElementById('ct').setAttribute('style','width:1200px');}"
+         }, {
+            "date_added": "13014339707433405",
+            "id": "32",
+            "name": "Free Uni",
+            "type": "url",
+            "url": "http://www.infocobuild.com/education/education.html"
+         }, {
+            "date_added": "13014786487496731",
+            "id": "35",
+            "name": "Flightradar24.com - Live flight tracker!",
+            "type": "url",
+            "url": "http://www.flightradar24.com/"
+         }, {
+            "date_added": "13015042153363181",
+            "id": "36",
+            "name": "Comparison of ATmel chips | The Wandering Engineer",
+            "type": "url",
+            "url": "http://thewanderingengineer.com/2013/04/28/comparison-of-atmel-chips/"
+         }, {
+            "date_added": "13017185826697848",
+            "id": "38",
+            "name": "How to set up the Atmel AVR STK500 programmer for use with ATTiny85-20PU (or ATTiny45 / ATTiny25) \u00AB Flip's Blog",
+            "type": "url",
+            "url": "http://blog.flipwork.nl/?x=entry:entry081008-113244"
+         }, {
+            "date_added": "13021830321794931",
+            "id": "48",
+            "name": "teho Labs | KiCAD Tutorial",
+            "type": "url",
+            "url": "http://teholabs.com/knowledge/kicad.html"
+         }, {
+            "date_added": "13019325848036161",
+            "id": "45",
+            "name": "Lessons In Electric Circuits",
+            "type": "url",
+            "url": "http://www.ibiblio.org/kuphaldt/electricCircuits/"
+         }, {
+            "date_added": "13026181559762276",
+            "id": "107",
+            "name": "gifs",
+            "type": "url",
+            "url": "http://reactiongifsarchive.imgur.com/"
+         } ],
+         "date_added": "13005632255863004",
+         "date_modified": "13026366829610073",
+         "id": "1",
+         "name": "Bookmarks Bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [ {
+            "children": [ {
+               "date_added": "13006215025061470",
+               "id": "13",
+               "name": "Cairo samples",
+               "type": "url",
+               "url": "http://cairographics.org/samples/"
+            }, {
+               "date_added": "13006215025061643",
+               "id": "14",
+               "name": "Conky Objects",
+               "type": "url",
+               "url": "http://conky.sourceforge.net/variables.html"
+            }, {
+               "date_added": "13006215025061719",
+               "id": "15",
+               "name": "Configuration Settings",
+               "type": "url",
+               "url": "http://conky.sourceforge.net/config_settings.html"
+            } ],
+            "date_added": "13006215025061392",
+            "date_modified": "13006215025061719",
+            "id": "12",
+            "name": "conky-cairo",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13019158373464452",
+               "id": "41",
+               "name": "All Satellites Frequency List Update",
+               "type": "url",
+               "url": "http://www.ne.jp/asahi/hamradio/je9pel/satslist.htm"
+            }, {
+               "date_added": "13019158381659458",
+               "id": "42",
+               "name": "Amateur radio satellites",
+               "type": "url",
+               "url": "http://www.n2yo.com/satellites/?c=18"
+            }, {
+               "date_added": "13019158386226698",
+               "id": "43",
+               "name": "Amateur Radio Satellites - All Passes",
+               "type": "url",
+               "url": "http://www.heavens-above.com/amateursats.aspx?lat=42.64204&lng=-73.78418&loc=Unspecified&alt=0&tz=EST"
+            }, {
+               "date_added": "13019444082753142",
+               "id": "46",
+               "name": "OSCAR Satellite Status page by KD5QGR",
+               "type": "url",
+               "url": "http://oscar.dcarr.org/"
+            } ],
+            "date_added": "13019158369033933",
+            "date_modified": "13019444089673079",
+            "id": "40",
+            "name": "Sats",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13022453464961523",
+               "id": "71",
+               "name": "Block brute force attacks with iptables - Kevin van Zonneveld",
+               "type": "url",
+               "url": "http://kvz.io/blog/2007/07/28/block-brute-force-attacks-with-iptables/"
+            }, {
+               "date_added": "13022455651125506",
+               "id": "72",
+               "name": "VPS: Debian squeeze apt-get update returned an error code (1) : Giuseppe Urso Blog",
+               "type": "url",
+               "url": "http://blog.giuseppeurso.net/vps-debian-squeeze-apt-get-update-returned-an-error-code-1/index.html"
+            }, {
+               "date_added": "13022471580399930",
+               "id": "73",
+               "name": "installing a clean copy of debian squeeze, locking it down by mrilhan \u2013 ilhan demirok",
+               "type": "url",
+               "url": "http://mrilhan.com/349/installing-a-clean-copy-of-debian-squeeze-locking-it-down/"
+            }, {
+               "date_added": "13024944523335665",
+               "id": "100",
+               "name": "linux - What steps do you take to secure a Debian server? - Server Fault",
+               "type": "url",
+               "url": "http://serverfault.com/questions/11659/what-steps-do-you-take-to-secure-a-debian-server"
+            }, {
+               "date_added": "13027545513375954",
+               "id": "124",
+               "name": "SPF Query Tool",
+               "type": "url",
+               "url": "http://www.kitterman.com/spf/validate.html?"
+            } ],
+            "date_added": "13022448925784829",
+            "date_modified": "13028079212473277",
+            "id": "70",
+            "name": "server-admin",
+            "type": "folder"
+         }, {
+            "children": [ {
+               "date_added": "13022185333828016",
+               "id": "51",
+               "name": "Making udev rule to set usb device permissions - Finninday",
+               "type": "url",
+               "url": "http://finninday.net/wiki/index.php/Making_udev_rule_to_set_usb_device_permissions"
+            }, {
+               "date_added": "13022020069944980",
+               "id": "50",
+               "name": "DS1000E/DS1000E--RIGOL website -- North America",
+               "type": "url",
+               "url": "http://us.rigol.com/prodserv/DS1000E/document/"
+            }, {
+               "date_added": "13022305710015750",
+               "id": "57",
+               "name": "Events and Signals in PySide",
+               "type": "url",
+               "url": "http://zetcode.com/gui/pysidetutorial/eventsandsignals/"
+            }, {
+               "date_added": "13022544768611576",
+               "id": "75",
+               "name": "Grabbing data from a Rigol \u2018scope with Python",
+               "type": "url",
+               "url": "http://hackaday.com/2012/03/30/grabbing-data-from-a-rigol-scope-with-python/"
+            }, {
+               "date_added": "13022544772762621",
+               "id": "76",
+               "name": "Controlling a Rigol oscilloscope using Linux and Python | C i b o M a h t o . c o m",
+               "type": "url",
+               "url": "http://www.cibomahto.com/2010/04/controlling-a-rigol-oscilloscope-using-linux-and-python/"
+            }, {
+               "date_added": "13022544779038767",
+               "id": "77",
+               "name": "hadmack/pyoscope",
+               "type": "url",
+               "url": "https://github.com/hadmack/pyoscope"
+            }, {
+               "date_added": "13022544782758771",
+               "id": "78",
+               "name": "Controlling the Rigol DS1052E digital oscilloscope under Linux",
+               "type": "url",
+               "url": "http://www.pittnerovi.com/jiri/hobby/electronics/rigol/index.html"
+            }, {
+               "date_added": "13022544784737733",
+               "id": "79",
+               "name": "www.rigol.com/download/Oversea/DS/Programming_guide/DS1000E(D)_ProgrammingGuide_EN.pdf",
+               "type": "url",
+               "url": "http://www.rigol.com/download/Oversea/DS/Programming_guide/DS1000E(D)_ProgrammingGuide_EN.pdf"
+            } ],
+            "date_added": "13022544724325956",
+            "date_modified": "13022544784737733",
+            "id": "74",
+            "name": "oscilloscope",
+            "type": "folder"
+         }, {
+            "date_added": "13024024783068484",
+            "id": "93",
+            "name": "Explaining the low level stuff you don\u2019t know about ARM programming",
+            "type": "url",
+            "url": "http://hackaday.com/2013/09/17/explaining-the-low-level-stuff-you-dont-know-about-arm-programming/"
+         }, {
+            "date_added": "13024024787580431",
+            "id": "94",
+            "name": "Update: McHck\u2019s self flashing rig",
+            "type": "url",
+            "url": "http://hackaday.com/2013/09/17/update-mchcks-self-flashing-rig/"
+         }, {
+            "date_added": "13024119169344712",
+            "id": "97",
+            "name": "fpga4fun.com - Welcome",
+            "type": "url",
+            "url": "http://www.fpga4fun.com/"
+         }, {
+            "date_added": "13024683381793079",
+            "id": "98",
+            "name": "Switch to HTTPS Now, For Free",
+            "type": "url",
+            "url": "https://konklone.com/post/switch-to-https-now-for-free"
+         }, {
+            "date_added": "13014306336265963",
+            "id": "30",
+            "name": "Electronic Parts Online Store - Tayda Electronics",
+            "type": "url",
+            "url": "http://www.taydaelectronics.com/"
+         }, {
+            "date_added": "13014398263747679",
+            "id": "33",
+            "name": "Electronic components - dipmicro electronics",
+            "type": "url",
+            "url": "http://www.dipmicro.com/store/"
+         }, {
+            "date_added": "13024976143848181",
+            "id": "102",
+            "name": "StartSSL\u2122 Certificates & Public Key Infrastructure",
+            "type": "url",
+            "url": "https://www.startssl.com/"
+         }, {
+            "date_added": "13024976152003237",
+            "id": "103",
+            "name": "Projects :: OpenCores",
+            "type": "url",
+            "url": "http://opencores.org/projects"
+         }, {
+            "date_added": "13024976174368495",
+            "id": "104",
+            "name": "Mojo",
+            "type": "url",
+            "url": "http://embeddedmicro.com/tutorials/mojo"
+         }, {
+            "date_added": "13024976367093131",
+            "id": "105",
+            "name": "more advanced excerpt of nginx SSL configuration options for konklone.com",
+            "type": "url",
+            "url": "https://gist.github.com/konklone/6532544"
+         }, {
+            "date_added": "13025801066892986",
+            "id": "106",
+            "name": "Services : Elecrow bazaar , make your making more easy",
+            "type": "url",
+            "url": "http://www.elecrow.com/services-c-73/"
+         }, {
+            "date_added": "13026366829610073",
+            "id": "108",
+            "name": "EPUB Validator (beta)",
+            "type": "url",
+            "url": "http://validator.idpf.org/"
+         }, {
+            "date_added": "13026411967400035",
+            "id": "109",
+            "name": "GCC ARM Embedded in Launchpad",
+            "type": "url",
+            "url": "https://launchpad.net/gcc-arm-embedded"
+         }, {
+            "children": [ {
+               "date_added": "13026666914796656",
+               "id": "111",
+               "name": "Index of /kitaplar",
+               "type": "url",
+               "url": "http://ebook.yesilperi.net/kitaplar/"
+            }, {
+               "date_added": "13026666924748917",
+               "id": "112",
+               "name": "Index of /books/-Lit- Recommended Reading",
+               "type": "url",
+               "url": "http://ptchanculto.binhoster.com/books/-Lit-%20Recommended%20Reading/"
+            }, {
+               "date_added": "13026667036780248",
+               "id": "113",
+               "name": "Index of /eBooks/pages",
+               "type": "url",
+               "url": "http://www.mvkworld.com/eBooks/pages/"
+            }, {
+               "date_added": "13026667087951196",
+               "id": "114",
+               "name": "Index of /",
+               "type": "url",
+               "url": "http://fland.re.4444.nyud.net/"
+            }, {
+               "date_added": "13026667204491356",
+               "id": "115",
+               "name": "EPUB Validator (beta) Results",
+               "type": "url",
+               "url": "http://validator.idpf.org/application/validate"
+            }, {
+               "date_added": "13026667223579585",
+               "id": "116",
+               "name": "Here's a Better Way to Make KF8 eBooks - The Digital Reader",
+               "type": "url",
+               "url": "http://www.the-digital-reader.com/2012/02/17/heres-the-right-way-to-make-kf8-ebooks/#.Ulssr4aJBAi"
+            }, {
+               "date_added": "13026667227161624",
+               "id": "117",
+               "name": "Kindle Format 8 Overview",
+               "type": "url",
+               "url": "http://www.amazon.com/gp/feature.html?ie=UTF8&docId=1000729511"
+            }, {
+               "date_added": "13026667231972660",
+               "id": "118",
+               "name": "HTML5 tags",
+               "type": "url",
+               "url": "http://www.amazon.com/gp/feature.html/ref=amb_link_357613502_6?ie=UTF8&docId=1000729901&pf_rd_m=ATVPDKIKX0DER&pf_rd_s=right-4&pf_rd_r=0GN9VRRB0NJ08VXGFKWK&pf_rd_t=1401&pf_rd_p=1343256942&pf_rd_i=1000729511"
+            } ],
+            "date_added": "13026666906933144",
+            "date_modified": "13027204406578829",
+            "id": "110",
+            "name": "ebooks",
+            "type": "folder"
+         }, {
+            "date_added": "13027204406578829",
+            "id": "121",
+            "name": "www.xess.com/static/media/appnotes/FpgasNowWhatBook.pdf",
+            "type": "url",
+            "url": "http://www.xess.com/static/media/appnotes/FpgasNowWhatBook.pdf"
+         }, {
+            "date_added": "13027204403192788",
+            "id": "120",
+            "name": "free range factory Main/Books",
+            "type": "url",
+            "url": "http://www.freerangefactory.org/site/pmwiki.php/Main/Books"
+         }, {
+            "date_added": "13027204395761300",
+            "id": "119",
+            "name": "FPGA course - Hamsterworks Wiki!",
+            "type": "url",
+            "url": "http://hamsterworks.co.nz/mediawiki/index.php/FPGA_course"
+         }, {
+            "date_added": "13027387860120104",
+            "id": "122",
+            "name": "Code Triage",
+            "type": "url",
+            "url": "http://www.codetriage.com/"
+         }, {
+            "date_added": "13027387891153717",
+            "id": "123",
+            "name": "ContribHub",
+            "type": "url",
+            "url": "http://contribhub.com/"
+         }, {
+            "date_added": "13028079212473277",
+            "id": "125",
+            "name": "Maximizing Distribution for Media Content - Facebook Developers",
+            "type": "url",
+            "url": "https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content/#tags"
+         }, {
+            "date_added": "13028594521453452",
+            "id": "127",
+            "name": "The Correct Way for Persistence on a LiveUSB for WALDORF (Page 1) / Tips, Tricks & Scripts / CrunchBang Linux Forums",
+            "type": "url",
+            "url": "http://crunchbang.org/forums/viewtopic.php?id=25489"
+         }, {
+            "date_added": "13028598494529265",
+            "id": "128",
+            "name": "API Directory - ProgrammableWeb",
+            "type": "url",
+            "url": "http://www.programmableweb.com/apis/directory"
+         }, {
+            "date_added": "13028598502301280",
+            "id": "129",
+            "name": "Mashape - The Cloud API Hub",
+            "type": "url",
+            "url": "https://www.mashape.com/"
+         } ],
+         "date_added": "13005632255863008",
+         "date_modified": "13028598502301280",
+         "id": "2",
+         "name": "Other Bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13005632255863008",
+         "date_modified": "0",
+         "id": "3",
+         "name": "Mobile Bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}
