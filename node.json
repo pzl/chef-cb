@@ -19,6 +19,7 @@
     	"recipe[wireshark]",
     	"recipe[git]",
     	"recipe[conky]",
-    	"recipe[heroku]"
+    	"recipe[heroku]",
+    	"recipe[moc]"
     ]
 }
