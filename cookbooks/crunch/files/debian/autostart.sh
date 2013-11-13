@@ -57,6 +57,9 @@ if egrep -iq 'touchpad' /proc/bus/input/devices; then
     synclient TapButton1=0 &
 fi
 
+#toggle 'fn' key on apple keyboards
+echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode
+
 ## Start xscreensaver
 xscreensaver -no-splash &
 
