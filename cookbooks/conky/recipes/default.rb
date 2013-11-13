@@ -8,6 +8,7 @@ remote_directory "/home/dan/.conky" do
 	group "dan"
 	files_backup 0
 	source ".conky"
+	action :create_if_missing
 end
 
 file "/home/dan/.conky/sensors.sh" do
