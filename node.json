@@ -17,6 +17,7 @@
     	"recipe[vim]",
     	"recipe[virtualbox]",
     	"recipe[wireshark]",
-    	"recipe[git]"
+    	"recipe[git]",
+    	"recipe[conky]"
     ]
 }

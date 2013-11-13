@@ -1,0 +1,11 @@
+default_color FFFFFF
+background no
+out_to_console yes
+update_interval 1.0
+total_run_times 0
+use_spacer no
+color1 4E9A06 ## Mint Green
+short_units yes
+
+TEXT
+^fg(\#4E9A06)•^fg(\#FFFFFF) CPU1 ${cpu cpu0}% ^fg(\#4E9A06)//^fg(\#FFFFFF) CPU2 ${cpu cpu1}% ^fg(\#4E9A06)//^fg(\#FFFFFF) MEM ${memperc}% ^fg(\#4E9A06)//^fg(\#FFFFFF) VOL ${mixer 'Master Front'}% ^fg(\#4E9A06)•^fg(\#FFFFFF) ROOT ${fs_used_perc /}% ^fg(\#4E9A06)//^fg(\#FFFFFF) HOME ${fs_used_perc /home/xn}% ^fg(\#4E9A06)•^fg(\#FFFFFF) IP ${addr wlan0} ^fg(\#4E9A06)//^fg(\#FFFFFF) UP ${upspeedf wlan0} ^fg(\#4E9A06)//^fg(\#FFFFFF) DOWN ${downspeedf wlan0} ^fg(\#4E9A06)•^fg(\#FFFFFF) ${if_running mocp}^fg(\#4E9A06)♫^fg(\#FFFFFF) ${exec mocp -Q %song} ^fg(\#4E9A06)//^fg(\#FFFFFF) ${exec mocp -Q %artist} ^fg(\#4E9A06)//^fg(\#FFFFFF) ${exec mocp -Q %album} ^fg(\#4E9A06)•^fg(\#FFFFFF) ${else}${endif}

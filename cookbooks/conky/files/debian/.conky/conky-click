@@ -1,0 +1,46 @@
+#background yes
+
+use_xft yes
+xftalpha 1
+xftfont Terminus:size=8
+
+update_interval 1
+
+own_window yes
+own_window_type panel
+own_window_title clicky
+#own_window_transparent yes
+own_window_hints undecorated,above,sticky,skip_taskbar,skip_pager
+
+double_buffer yes
+
+draw_shades no
+draw_outline no
+draw_borders no
+border_width 0
+
+default_color white
+#default_shade_color #2e3436
+default_shade_color blue
+default_outline_color green
+
+alignment top_left
+
+gap_y 0
+gap_x 0
+maximum_width 1920
+minimum_size 1920 30
+
+no_buffers yes
+
+cpu_avg_samples 10
+net_avg_samples 5
+
+override_utf8_locale no
+
+
+lua_load ~/.conky/lua/clicky.lua
+lua_draw_hook_post main
+
+TEXT
+|

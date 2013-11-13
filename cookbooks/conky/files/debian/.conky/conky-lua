@@ -1,0 +1,57 @@
+background yes
+
+use_xft yes
+xftalpha 1
+xftfont Terminus:size=8
+
+update_interval 1
+
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,above,sticky,skip_taskbar,skip_pager
+
+double_buffer yes
+
+draw_shades no
+draw_outline no
+draw_borders no
+stippled_borders 8
+border_width 0
+
+default_color white
+default_shade_color black
+default_outline_color white
+
+alignment top_right
+
+gap_y 8
+maximum_width 1440
+minimum_size 1440 10
+
+no_buffers yes
+
+cpu_avg_samples 10
+net_avg_samples 5
+
+override_utf8_locale no
+
+use_spacer left
+
+short_units yes
+pad_percents 2
+
+color1 708090 #Text blue-grey
+color2 888888 #bargraph grey
+color3 aa0000 #high condition red
+color4 000055 #low condition blue
+
+color6 331111 #core1
+color7 234245 #core2
+color8 235235 #core3
+color9 435329 #core4
+
+lua_load ~/.conky/lua/mail.lua
+lua_draw_hook_post main
+
+TEXT
