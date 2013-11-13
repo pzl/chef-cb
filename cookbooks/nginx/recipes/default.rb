@@ -15,7 +15,7 @@ end
 execute "apt-install-nginx" do
 	command "apt-get -q -y install -t wheezy-backports nginx-extras"
 	action :run
-	not_if { ::File.exists? "/usr/sbin/nginx" }
+	creates "/usr/sbin/nginx"
 end
 
 #bug: tries to pre-fetch version from stable repos
