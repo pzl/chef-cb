@@ -41,12 +41,16 @@ ruby_block "enable auto login" do
 	end
 end
 
+#bashrc
+#todo: move to dotfiles recipe?
+cookbook_file "/home/dan/.bashrc" do
+	source ".bashrc"
+	mode 0644
+	owner "dan"
+	group "dan"
+end
 
 #todo
-
-#move to a dotfiles recipe?
-#ln -s ~/.bashrc lib/dotfiles/.bashrc
-
 
 #bin
 
