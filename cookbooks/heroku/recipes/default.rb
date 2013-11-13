@@ -1,9 +1,24 @@
-# Cookbook Name: heroku
-# Recipe: default
-
 #todo: x-platform
-execute "install heroku toolbelt" do
-  command "wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | bash"
-  action :run
-  not_if { ::File.exists?("/usr/bin/heroku") }
+
+#https://toolbelt.heroku.com/install-ubuntu.sh
+execute "install-heroku-key" do
+	command "wget -O- https://toolbelt.heroku.com/apt/release.key | apt-key add -"
+	not_if { ::File.exists? "/etc/apt/sources.list.d/heroku.list" }
+end
+
+cookbook_file "/etc/apt/sources.list.d/heroku.list" do
+	source "heroku.list"
+	mode 0644
+	owner "root"
+	group "root"
+	notifies :run, "execute[update]", :immediately
+end
+
+execute "update" do
+	command "apt-get update"
+	action :nothing
+end
+
+package "heroku-toolbelt" do
+	action :install
 end

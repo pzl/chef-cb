@@ -18,6 +18,7 @@
     	"recipe[virtualbox]",
     	"recipe[wireshark]",
     	"recipe[git]",
-    	"recipe[conky]"
+    	"recipe[conky]",
+    	"recipe[heroku]"
     ]
 }
