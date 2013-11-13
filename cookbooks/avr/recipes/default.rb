@@ -1,6 +1,16 @@
-# packages 	gcc-avr avr-libc binutils-avr avrdude \
+package 'gcc-avr'
+package 'avr-libc'
+package 'binutils-avr'
+package 'avrdude'
 
-#.avrduderc
+cookbook_file "/home/dan/.avrduderc" do
+	source ".avrduderc"
+	mode 0644
+	owner "dan"
+	group "dan"
+end
 
-#TTYS0 rules
-#reload
+
+#todo
+#TTYS1 rules & reload udev
+#tolerate usb to serial
