@@ -12,6 +12,7 @@ cookbook_file "/etc/apt/sources.list.d/google-chrome.list" do
 	owner "root"
 	group "root"
 	mode 0644
+	action :create_if_missing
 	notifies :run, "execute[update]", :immediate
 end
 
@@ -30,6 +31,7 @@ cookbook_file "/home/dan/.config/google-chrome/Default/Bookmarks" do
 	source "bookmark"
 	owner "dan"
 	group "dan"
+	action :create_if_missing
 	mode 0600
 end
 
