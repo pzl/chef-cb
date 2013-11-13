@@ -1,0 +1,25 @@
+[user]
+	name = pzl
+    email = dan@panzarel.la
+    editor=vim
+[core]
+    editor=vim
+    autocrlf=input
+    pager=less -eiFrSX
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = auto
+    pager = true
+[alias]
+    s = status
+    co = checkout
+    cm = commit
+    cma = commit -a
+    com = checkout master
+    new = checkout -b
+    l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(blue)- %an, %C(bold black)%ar%Creset'
+    ll = log --oneline --stat --graph
+    d = diff --color-words
