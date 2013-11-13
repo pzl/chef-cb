@@ -15,6 +15,7 @@
     	"recipe[sensors]",
     	"recipe[terminus]",
     	"recipe[vim]",
-    	"recipe[virtualbox]"
+    	"recipe[virtualbox]",
+    	"recipe[wireshark]"
     ]
 }
