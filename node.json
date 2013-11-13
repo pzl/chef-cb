@@ -9,6 +9,7 @@
     	"recipe[latex]",
     	"recipe[x11-dev]",
     	"recipe[calibre]",
-    	"recipe[mongo]"
+    	"recipe[mongo]",
+    	"recipe[nginx]"
     ]
 }
