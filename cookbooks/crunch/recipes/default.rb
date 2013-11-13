@@ -11,16 +11,24 @@ end
 #update sources
 bash "apt update" do
 	code "apt-get update"
+	#todo only run if backports was a new addition?
 end
 
 #move to a dotfiles recipe?
 #ln -s ~/.bashrc lib/dotfiles/.bashrc
 
 
-#ln -s ~/.config/openbox/autostart lib/autostart
+cookbook_file "/home/dan/.config/openbox/autostart" do
+	source "autostart.sh"
+	mode 0755
+	owner "dan"
+	group "dan"
+end
 
 
 #bin
+
+#sidebar folders in thunar -- move to theming?
 
 
 ## IO HACKS
