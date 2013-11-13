@@ -10,6 +10,7 @@
     	"recipe[x11-dev]",
     	"recipe[calibre]",
     	"recipe[mongo]",
-    	"recipe[nginx]"
+    	"recipe[nginx]",
+    	"recipe[node]"
     ]
 }
