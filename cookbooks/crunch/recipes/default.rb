@@ -6,12 +6,13 @@ cookbook_file "/etc/apt/sources.list.d/wheezy-backports.list" do
 	mode 0644
 	owner "root"
 	group "root"
+	notifies :run, "execute[apt-get-update]", :immediately
 	#notify other rsrc that backports are enabled? or test for backports in them
 end
 #update sources
-bash "apt update" do
-	code "apt-get update"
-	#todo only run if backports was a new addition?
+execute "apt-get-update" do
+	command "apt-get update"
+	action :nothing
 end
 
 
