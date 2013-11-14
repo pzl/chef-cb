@@ -40,6 +40,14 @@ ruby_block "enable auto login" do
 		)
 		f.write_file
 	end
+	not_if { ::File.exists? "/home/dan/.config/.autologin"}
+end
+
+cookbook_file "/home/dan/.config/.autologin" do
+	source ".autologin"
+	owner "dan"
+	group "dan"
+	mode 0644
 end
 
 #bashrc
