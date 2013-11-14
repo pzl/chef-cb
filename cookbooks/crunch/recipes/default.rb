@@ -1,6 +1,13 @@
 #Crunchbang-specific setup
 
 
+#get rid of folders I don't want
+%w{backup music templates videos}.each do |dir|
+	directory "/home/dan/#{dir}" do
+		action :delete
+	end
+end
+
 #openbox autostart
 cookbook_file "/home/dan/.config/openbox/autostart" do
 	source "autostart.sh"
