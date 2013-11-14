@@ -14,10 +14,10 @@ cookbook_file "/etc/apt/sources.list.d/google-chrome.list" do
 	group "root"
 	mode 0644
 	action :create_if_missing
-	notifies :run, "execute[update]", :immediate
+	notifies :run, "execute[update-goog]", :immediately
 end
 
-execute "update" do
+execute "update-goog" do
 	command "apt-get update"
 	action :nothing
 end
@@ -43,7 +43,7 @@ cookbook_file "/etc/apt/sources.list.d/google-talkplugin.list" do
 	group "root"
 	mode 0644
 	action :create_if_missing
-	notifies :run, "execute[update]", :immediate
+	notifies :run, "execute[update-goog]", :immediately
 end
 
 package "google-talkplugin" do
