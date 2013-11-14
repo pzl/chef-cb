@@ -1,5 +1,7 @@
-cookbook_file "/etc/apt/sources.list.d/wheezy-backports.list" do
+cookbook_file "backports-nginx" do
+	path "/etc/apt/sources.list.d/wheezy-backports.list"
 	source "wheezy-backports.list"
+	cookbook "apt"
 	mode 0644
 	owner "root"
 	group "root"

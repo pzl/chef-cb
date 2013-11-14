@@ -1,20 +1,5 @@
 #Crunchbang-specific setup
 
-#add backports to sources
-cookbook_file "/etc/apt/sources.list.d/wheezy-backports.list" do
-	source "wheezy-backports.list"
-	mode 0644
-	owner "root"
-	group "root"
-	notifies :run, "execute[apt-get-update]", :immediately
-	#notify other rsrc that backports are enabled? or test for backports in them
-end
-#update sources
-execute "apt-get-update" do
-	command "apt-get update"
-	action :nothing
-end
-
 
 #openbox autostart
 cookbook_file "/home/dan/.config/openbox/autostart" do
