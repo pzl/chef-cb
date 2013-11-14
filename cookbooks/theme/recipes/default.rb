@@ -1,5 +1,17 @@
 #flatstudio
-
+execute "flatstudio" do
+	cwd Chef::Config['file_cache_path']
+	command <<-EOH
+		wget http://gnome-look.org/CONTENT/content-files/154296-FlatStudio-1.03.tar.gz
+		tar -xzf 154296-FlatStudio-1.03.tar.gz
+		rm -rf 154296-FlatStudio-1.03.tar.gz
+		mv FlatStudio /usr/share/themes/
+		mv FlatStudioDark /usr/share/themes/
+		mv FlatStudioGray /usr/share/themes/
+		mv FlatStudioLight /usr/share/themes/
+	EOH
+	creates "/usr/share/themes/FlatStudioDark/readme.txt"
+end
 
 cookbook_file "/home/dan/.config/gtk-3.0/settings.ini" do
 	source "gtk-3-settings"
