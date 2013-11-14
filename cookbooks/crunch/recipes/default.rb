@@ -58,8 +58,13 @@ cookbook_file "/home/dan/.bashrc" do
 	group "dan"
 end
 
+cookbook_file "/root/.bashrc" do
+	source ".bashrc"
+	mode 0644
+	owner "root"
+	group "root"
+end
+
 #todo
-
 #bin
-
-#sidebar folders in thunar -- move to theming?
+#dev?
