@@ -86,6 +86,18 @@ cookbook_file "/home/dan/.config/terminator/config" do
 	mode 0644
 end
 
-#compton
+#compton -- disable shadows
+cookbook_file "/home/dan/.config/compton.conf" do
+	source "compton.conf"
+	owner "dan"
+	group "dan"
+	mode 0644
+	notifies :run, 'execute[compton]', :immediately
+end
+
+execute "compton" do
+	command "killall compton"
+	action :nothing
+end
 
 #other RCs
