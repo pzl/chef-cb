@@ -20,6 +20,26 @@ cookbook_file "/home/dan/.config/gtk-3.0/settings.ini" do
 	mode 0644
 end
 
+cookbook_file "/home/dan/.gtkrc-2.0" do
+	source ".gtkrc-2.0"
+	owner "dan"
+	group "dan"
+	mode 0644
+end
+cookbook_file "/root/.gtkrc-2.0" do
+	source ".gtkrc-2.0"
+	owner "root"
+	group "root"
+	mode 0644
+end
+
+cookbook_file "/home/dan/.gtk-bookmarks" do
+	source ".gtk-bookmarks"
+	owner "dan"
+	group "dan"
+	mode 0644
+end
+
 
 #thunar
 cookbook_file "/home/dan/.config/Thunar/thunarrc" do
