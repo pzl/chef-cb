@@ -24,6 +24,9 @@ execute "nvidia-xconfig" do
 end
 
 
+#check out: mesa-utils, libvdpau-dev
+
+
 #if AMD: smxi
 package "unzip"
 package "dkms"
