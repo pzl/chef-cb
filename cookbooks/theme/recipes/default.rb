@@ -8,6 +8,22 @@ cookbook_file "/home/dan/.config/gtk-3.0/settings.ini" do
 	mode 0644
 end
 
+
+#thunar
+cookbook_file "/home/dan/.config/Thunar/thunarrc" do
+	source "thunarrc"
+	owner "dan"
+	group "dan"
+	mode 0644
+end
+
+cookbook_file "/home/dan/.config/Thunar/uca.xml" do
+	source "uca.xml"
+	owner "dan"
+	group "dan"
+	mode 0644
+end
+
 #openbox
 cookbook_file "/home/dan/.config/openbox/menu.xml" do
 	source "menu.xml"
