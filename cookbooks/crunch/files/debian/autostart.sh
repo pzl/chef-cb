@@ -58,7 +58,7 @@ if egrep -iq 'touchpad' /proc/bus/input/devices; then
 fi
 
 #toggle 'fn' key on apple keyboards
-echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode
+echo 0 | gksudo tee /sys/module/hid_apple/parameters/fnmode
 
 ## Start xscreensaver
 xscreensaver -no-splash &
@@ -89,10 +89,10 @@ conky -q &
 conky -q -c ~/.conky/conky-bar &
 
 #perma-f keys mode, and open gfx driver
-terminator -e "echo 0 | sudo tee -a /sys/module/hid_apple/parameters/fnmode; sudo amdcccle"
+#terminator -e "echo 0 | sudo tee -a /sys/module/hid_apple/parameters/fnmode; sudo amdcccle"
 
 #razer naga key listening
 nagad &
 
 
-(sleep 3s && terminator -b -m) &
+(sleep 2s && terminator -b -m) &
