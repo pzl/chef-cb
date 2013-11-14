@@ -8,6 +8,21 @@ cookbook_file "/home/dan/.config/gtk-3.0/settings.ini" do
 	mode 0644
 end
 
+#openbox
+cookbook_file "/home/dan/.config/openbox/menu.xml" do
+	source "menu.xml"
+	owner "dan"
+	group "dan"
+	mode 0644
+end
+
+cookbook_file "/home/dan/.config/openbox/rc.xml" do
+	source "rc.xml"
+	owner "dan"
+	group "dan"
+	mode 0644
+end
+
 #wallpapers
 cookbook_file "/home/dan/.config/nitrogen/bg-saved.cfg" do
 	source "bg-saved.cfg"
@@ -56,6 +71,5 @@ cookbook_file "/home/dan/.config/terminator/config" do
 end
 
 #compton
-#background
 
 #other RCs
