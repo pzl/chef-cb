@@ -22,6 +22,7 @@
     	"recipe[conky]",
     	"recipe[heroku]",
     	"recipe[moc]",
-    	"recipe[chrome]"
+    	"recipe[chrome]",
+    	"recipe[kicad]"
     ]
 }
