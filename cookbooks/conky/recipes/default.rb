@@ -32,12 +32,16 @@ dirs.each do |dir|
 end
 
 files.each do |f|
-	cookbook_file location+f do
+	template location+f do
 		source f
 		owner "dan"
 		group "dan"
 		mode 0600
 		backup false
+		#variables
+			#nvidia vs amd
+			#cpu cores
+			#wlan vs eth?
 	end
 end
 
@@ -55,7 +59,7 @@ end
 #	action :create_if_missing
 #end
 
-cookbook_file location+".conky/scripts/sensors.sh" do
+template location+".conky/scripts/sensors.sh" do
 	source ".conky/scripts/sensors.sh"
 	mode 0700
 	owner "dan"
@@ -63,7 +67,7 @@ cookbook_file location+".conky/scripts/sensors.sh" do
 end
 
 #cron
-cookbook_file "/etc/cron.d/ip.cron" do
+template "/etc/cron.d/ip.cron" do
 	source "ip.cron"
 	mode 0644
 	owner "root"
