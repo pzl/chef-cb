@@ -2,6 +2,7 @@
     "run_list": [
     	"recipe[crunch]",
     	"recipe[apt]",
+    	"recipe[theme]",
     	"recipe[gcolor2]",
     	"recipe[avr]",
     	"recipe[clipit]",
