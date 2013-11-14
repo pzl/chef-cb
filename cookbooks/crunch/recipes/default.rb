@@ -1,4 +1,5 @@
 #Crunchbang-specific setup
+package 'gtk2-engines-pixbuf' #https://bugs.launchpad.net/ubuntu/+source/light-themes/+bug/762167
 
 
 #get rid of folders I don't want
