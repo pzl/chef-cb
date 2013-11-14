@@ -1,0 +1,7 @@
+# Rigol DS1000D/E Series
+# Rigol DG1000 Series
+# This file should be installed to /etc/udev/rules.d so that you can access the scope without being root
+
+KERNEL=="usbtmc0", MODE="0666"
+
+#SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTR{idVendor}=="1ab1", ATTR{idProduct}=="0588", MODE="0666"

@@ -23,6 +23,7 @@
     	"recipe[heroku]",
     	"recipe[moc]",
     	"recipe[chrome]",
-    	"recipe[kicad]"
+    	"recipe[kicad]",
+    	"recipe[rigol]"
     ]
 }
