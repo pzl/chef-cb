@@ -5,6 +5,7 @@
 %w{backup music templates videos}.each do |dir|
 	directory "/home/dan/#{dir}" do
 		action :delete
+		recursive true
 	end
 end
 
