@@ -11,10 +11,10 @@ cookbook_file "/etc/apt/sources.list.d/heroku.list" do
 	mode 0644
 	owner "root"
 	group "root"
-	notifies :run, "execute[update]", :immediately
+	notifies :run, "execute[update-heroku]", :immediately
 end
 
-execute "update" do
+execute "update-heroku" do
 	command "apt-get update"
 	action :nothing
 end

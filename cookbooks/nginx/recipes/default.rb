@@ -4,10 +4,10 @@ cookbook_file "/etc/apt/sources.list.d/wheezy-backports.list" do
 	owner "root"
 	group "root"
 	action :create_if_missing
-	notifies :run, "execute[apt-update]", :immediately
+	notifies :run, "execute[apt-update-nginx]", :immediately
 end
 
-execute "apt-update" do
+execute "apt-update-nginx" do
 	command "apt-get update"
 	action :nothing
 end

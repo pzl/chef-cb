@@ -11,10 +11,10 @@ cookbook_file "/etc/apt/sources.list.d/10gen.list" do
 	owner "root"
 	group "root"
 	action :create_if_missing
-	notifies :run, "execute[update]", :immediately
+	notifies :run, "execute[update-mongo]", :immediately
 end
 
-execute "update" do
+execute "update-mongo" do
 	command "apt-get update"
 	action :nothing
 end
