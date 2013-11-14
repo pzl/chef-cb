@@ -33,8 +33,8 @@ hsetroot -solid "#2E3436" &
 ## 4. tint2 panel
 (\
 nitrogen --restore && \
-cb-compositor --start && \
-sleep 2s && \
+#cb-compositor --start && \
+#sleep 2s && \
 tint2 \
 ) &
 
