@@ -18,6 +18,13 @@ end
 
 
 #terminator config
+cookbook_file "/home/dan/.config/terminator/config" do
+	source "terminator-config"
+	owner "dan"
+	group "dan"
+	mode 0644
+end
+
 #compton
 #background
 
