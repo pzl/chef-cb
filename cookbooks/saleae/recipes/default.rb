@@ -18,14 +18,19 @@ execute "install Logic" do
 		rm -rf Logic.zip
 		cp "Logic 1.1.15 (#{arch}-bit)/Drivers/99-SaleaeLogic.rules" /etc/udev/rules.d/
 		mv "Logic 1.1.15 (#{arch}-bit)" /home/dan/bin/
+		chown -R dan "/home/dan/bin/Logic 1.1.15 (#{arch}-bit)"
 		udevadm control --reload-rules
 		udevadm trigger
 	EOH
-	#need bin/logic
-	#permissions nightmare
-	action :nothing
+	creates "/home/dan/bin/Logic 1.1.15 (#{arch}-bit)/Logic"
 end
 
-#wget "http://downloads.saleae.com/Logic%201.1.15%20($ARCH-bit).zip"; unzip "Logic 1.1.15 ($ARCH-bit).zip"; rm -rf "Logic 1.1.15 ($ARCH-bit).zip"; mv "Logic 1.1.15 ($ARCH-bit)" ~/bin/;
-#sudo cp "~/bin/Logic 1.1.15 ($ARCH-bit)/Drivers/99-SaleaeLogic.rules" /etc/udev/rules.d/;
-#sudo udevadm control --reload-rules; sudo udevadm trigger;
+template "/home/dan/bin/logic" do
+	source "logic.erb"
+	mode 0755
+	owner "dan"
+	group "dan"
+	backup false
+	variables  :dir => "Logic\\ 1.1.15\\ \\(#{arch}-bit\\)" 
+	action :create_if_missing
+end
