@@ -19,8 +19,9 @@ end
 #package "nvidia-xconfig"
 #package "nvidia-settings"
 execute "nvidia-xconfig" do
-	command "nvidia-xconfig"
+	command "nvidia-xconfig -s --no-logo --force-generate -o /etc/X11/xorg.conf"
 	action :nothing
+	#creates "/etc/X11/xorg.conf"
 end
 
 
