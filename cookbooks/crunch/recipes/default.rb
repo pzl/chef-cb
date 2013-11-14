@@ -9,6 +9,12 @@
 	end
 end
 
+directory "/home/dan/dev" do
+	owner "dan"
+	group "dan"
+	mode 0755
+end
+
 #openbox autostart
 cookbook_file "/home/dan/.config/openbox/autostart" do
 	source "autostart.sh"
