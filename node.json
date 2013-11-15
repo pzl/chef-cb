@@ -26,6 +26,7 @@
     	"recipe[moc]",
     	"recipe[chrome]",
     	"recipe[kicad]",
-    	"recipe[rigol]"
+    	"recipe[rigol]",
+        "recipe[sublime]"
     ]
 }
