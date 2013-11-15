@@ -1,6 +1,7 @@
 #maybe use apt LWRP in the future
 
 #@todo: disable journaling -- nojournal=true in /etc/mongodb.conf
+#@todo turn off start on boot, or start after install
 
 execute "install-mongo-key" do
 	command "apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10"
