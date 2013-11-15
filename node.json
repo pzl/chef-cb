@@ -7,6 +7,7 @@
     	"recipe[avr]",
     	"recipe[clipit]",
     	"recipe[dns]",
+        "recipe[ncdu]",
     	"recipe[gifsicle]",
     	"recipe[latex]",
     	"recipe[x11-dev]",
