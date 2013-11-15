@@ -32,6 +32,7 @@ directory working_tree do
 	group "dan"
 	mode 0755
 	action :create
+	not_if { ::File.exists? "/usr/local/bin/kicad" }
 end
 
 #3) launchpad source
@@ -45,6 +46,7 @@ execute "bzr checkout kicad" do
 	end
 	#prevents updates
 	creates working_tree+"kicad.bzr"
+	not_if { ::File.exists? "/usr/local/bin/kicad" }
 end
 
 #4) kicad libs
@@ -58,6 +60,7 @@ execute "bzr checkout kicad-libs" do
 	end
 	#prevents updates
 	creates working_tree+"kicad-lib.bzr"
+	not_if { ::File.exists? "/usr/local/bin/kicad" }
 end
 
 #5) kicad docs -- skip?
@@ -69,6 +72,7 @@ directory working_tree+"kicad.bzr/build" do
 	mode 0755
 	action :create
 	notifies :run, "execute[cmake kicad]", :immediately
+	not_if { ::File.exists? "/usr/local/bin/kicad" }
 end
 
 execute "cmake kicad" do
@@ -114,6 +118,7 @@ directory working_tree+"kicad-lib.bzr/build" do
 	mode 0755
 	action :create
 	notifies :run, "execute[build kicad-lib]", :immediately
+	not_if { ::File.exists? "/usr/local/bin/kicad" }
 end
 
 execute "build kicad-lib" do
