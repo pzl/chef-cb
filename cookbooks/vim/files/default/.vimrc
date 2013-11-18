@@ -21,6 +21,10 @@ set smarttab
 set nohidden
 "set spell
 
+set t_Co=256
+"set t_AB=^[[48;5;%dm
+"set t_AF=^[[38;5;%dm
+
 execute pathogen#infect()
 set laststatus=2
 set ttimeoutlen=50
