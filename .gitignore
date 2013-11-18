@@ -1,5 +1,5 @@
 *~
-.swp
-.pid
-.out
+*.swp
+*.pid
+*.out
 install.sh
