@@ -1,5 +1,6 @@
 {
     "run_list": [
+        "recipe[git]",
     	"recipe[crunch]",
     	"recipe[apt]",
     	"recipe[theme]",
@@ -21,7 +22,6 @@
     	"recipe[vim]",
     	"recipe[virtualbox]",
     	"recipe[wireshark]",
-    	"recipe[git]",
     	"recipe[conky]",
     	"recipe[heroku]",
     	"recipe[moc]",
