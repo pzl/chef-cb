@@ -71,17 +71,17 @@ git "/home/dan/.vim/bundle/vim-fugitive" do
 end
 
 #vim gitgutter
-git "/home/dan/.vim/bundle/vim-gitgutter" do
-	repository "https://github.com/airblade/vim-gitgutter.git"
-	action :sync
-	user "dan"
-	group "dan"
-end
+#git "/home/dan/.vim/bundle/vim-gitgutter" do
+#	repository "https://github.com/airblade/vim-gitgutter.git"
+#	action :sync
+#	user "dan"
+#	group "dan"
+#end
 
 #bufferline
-git "/home/dan/.vim/bundle/vim-bufferline" do
-	repository "https://github.com/bling/vim-bufferline.git"
-	action :sync
-	user "dan"
-	group "dan"
-end
+#git "/home/dan/.vim/bundle/vim-bufferline" do
+#	repository "https://github.com/bling/vim-bufferline.git"
+#	action :sync
+#	user "dan"
+#	group "dan"
+#end
