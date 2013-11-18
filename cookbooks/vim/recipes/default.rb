@@ -70,13 +70,13 @@ git "/home/dan/.vim/bundle/vim-fugitive" do
 	group "dan"
 end
 
-#vim gitgutter
-#git "/home/dan/.vim/bundle/vim-gitgutter" do
-#	repository "https://github.com/airblade/vim-gitgutter.git"
-#	action :sync
-#	user "dan"
-#	group "dan"
-#end
+#vim easymotion
+git "/home/dan/.vim/bundle/vim-easymotion" do
+	repository "https://github.com/Lokaltog/vim-easymotion.git"
+	action :sync
+	user "dan"
+	group "dan"
+end
 
 #bufferline
 #git "/home/dan/.vim/bundle/vim-bufferline" do
@@ -85,3 +85,5 @@ end
 #	user "dan"
 #	group "dan"
 #end
+
+#
