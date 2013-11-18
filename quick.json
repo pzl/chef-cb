@@ -1,0 +1,14 @@
+{
+    "run_list": [
+        "recipe[git]",
+    	"recipe[crunch]",
+    	"recipe[apt]",
+    	"recipe[theme]",
+    	"recipe[clipit]",
+    	"recipe[terminus]",
+    	"recipe[vim]",
+    	"recipe[conky]",
+    	"recipe[chrome]",
+        "recipe[sublime]"
+    ]
+}
