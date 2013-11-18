@@ -28,4 +28,10 @@ set t_Co=256
 execute pathogen#infect()
 set laststatus=2
 set ttimeoutlen=50
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
 let g:airline_powerline_fonts=1
+let g:airline#extensions#hunks#enabled=0
+"let g:airline#extensions#hunks#non_zero_only = 1
