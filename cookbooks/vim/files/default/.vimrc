@@ -20,3 +20,8 @@ set showcmd
 set smarttab
 set nohidden
 "set spell
+
+execute pathogen#infect()
+set laststatus=2
+set ttimeoutlen=50
+let g:airline_powerline_fonts=1
