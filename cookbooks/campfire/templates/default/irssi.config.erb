@@ -1,0 +1,17 @@
+servers = (
+  {
+    address = "127.0.0.1";
+    chatnet = "Campfire";
+    port = "6667";
+    autoconnect = "true";
+    password = "subdomain:token";
+  }
+);
+ 
+chatnets = {
+  Campfire = { type = "IRC"; };
+};
+ 
+channels = (
+  { name = "#roomname"; chatnet = "Campfire"; autojoin = "yes"; }
+);
