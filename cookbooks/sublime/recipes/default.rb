@@ -71,4 +71,5 @@ end
 
 #@todo
 #packages -- that would be a doozy
+#http://stackoverflow.com/questions/19529999/add-package-control-in-sublime-text-3-through-the-command-line
 #configs, workspaces, etc
