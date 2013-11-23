@@ -1,1 +1,88 @@
 #Razer naga hotkeys
+git "#{Chef::Config[:file_cache_path]}/nagad" do
+	repository "https://github.com/pzl/Razer-Naga-HotKey.git"
+	action :checkout
+	notifies :run, "execute[build nagad]", :immediately
+end
+
+execute "build nagad" do
+	cwd "#{Chef::Config[:file_cache_path]}/nagad"
+	command "make && make install"
+	action :nothing
+end
+
+files = [
+	"button_1",
+	"button_2",
+	"button_3",
+	"button_4",
+	"button_5",
+	"button_6",
+	"button_7",
+	"button_8",
+	"button_9",
+	"button_10",
+	"button_11",
+	"button_12",
+	"button_back",
+	"button_forward",
+	"log"
+]
+
+directory "/home/dan/.naga" do
+	owner "dan"
+	group "dan"
+	mode 0644
+	action :create
+end
+
+files.each do |f|
+	template "/home/dan/.naga/#{f}" do
+		source f
+		owner "dan"
+		group "dan"
+		mode 0755
+		backup false
+	end
+end
+
+#~/.config/openbox/rc.xml
+# in <mouse>
+#<context name="Frame Desktop">
+#<mousebind button="Button9" action="Press">
+#  <action name="Execute">
+#    <command>~/.naga/button_forward</command>
+#  </action>
+#</mousebind>
+#<mousebind button="Button8" action="Press">
+#  <action name="Execute">
+#    <command>~/.naga/button_back</command>
+#  </action>
+#</mousebind>
+
+
+#razercfg
+package 'python2.7'
+package 'cmake'
+package 'libusb-1.0.0-dev'
+package 'python-qt4' #optional dep. for graphical qrazercfg
+
+
+git "#{Chef::Config[:file_cache_path]}/razercfg" do
+	repository "https://github.com/mbuesch/razer.git"
+	action :checkout
+	notifies :run, "execute[razercfg make]", :immediately
+end
+
+execute "razercfg make" do
+	cwd "#{Chef::Config[:file_cache_path]}/razercfg"
+	command <<-EOH
+		cmake .
+		make
+		make install
+	EOH
+	action :nothing
+end
+
+#todo init scripts for razerd
+#or put into autostart (needs root?)
