@@ -15,6 +15,13 @@ cookbook_file "/root/.vimrc" do
 end
 
 #install pathogen
+directory "/home/dan/.vim" do
+	owner "dan"
+	group "dan"
+	mode 0755
+	action :create
+end
+
 directory "/home/dan/.vim/autoload" do
 	owner "dan"
 	group "dan"
