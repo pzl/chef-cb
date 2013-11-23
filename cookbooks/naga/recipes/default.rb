@@ -32,7 +32,7 @@ files = [
 directory "/home/dan/.naga" do
 	owner "dan"
 	group "dan"
-	mode 0644
+	mode 0755
 	action :create
 end
 
