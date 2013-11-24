@@ -1,3 +1,5 @@
+#palette = "black:red:green:yellow:blue:magenta:cyan:white" and then the same in bold
+
 [global_config]
   title_transmit_bg_color = "#000000"
   title_inactive_bg_color = "#000000"
@@ -15,58 +17,21 @@
     cursor_color = "#d8d8d8"
     foreground_color = "#d8d8d8"
     show_titlebar = False
-    color_scheme = custom
     font = Terminus 10
     background_color = "#2e3436"
     audible_bell = True
-    scrollback_infinite = True
-  [[pzl]]
-    scrollbar_position = hidden
-    palette = "#252525:#FF6C5F:#B8CA4B:#ECFF78:#95B9DE:#CD8FAF:#21E5DF:#B2A191:#888888:#BF3F34:#707D22:#DBB951:#627A92:#CD5291:#1AB2AD:#E8D0C3"
-    background_darkness = 0.83
-    background_type = transparent
-    use_system_font = False
-    scroll_on_output = False
-    show_titlebar = False
-    font = Terminus 10
-    background_color = "#2e3436"
-    scrollback_infinite = True
-  [[theme1]]
-    scrollbar_position = hidden
-    palette = "#5B5955:#C4756E:#559A6A:#9B8A4B:#6A8DCA:#B577AC:#019BAA:#DBDDE2:#707277:#F6A299:#82C896:#CAB775:#98BBFB:#E5A4DB:#53CAD9:#F7F9FF"
+    #scrollback_infinite = True
+  [[ICBINB]]
+    #scrollbar_position = hidden
+    scrollbar_position = disabled
+    show_titlebar=False
+    use_theme_colors=False
+    foreground_color = "#eddcd3"
+    background_color = "#181512"
+    cursor_color = "#917154"
+    palette = "#252525:#CD546C:#A5AF86:#CD7860:#7A9388:#917154:#767D75:#C2C2A8:#454545:#EF545F:#BDC79E:#E88773:#94B1A3:#989584:#9DA69E:#DBDAC1"
     background_darkness = 0.83
     scrollback_lines = 5000
     background_type = transparent
     use_system_font = False
-    cursor_color = "#53cad9"
-    foreground_color = "#a4a6ab"
-    show_titlebar = False
-    color_scheme = custom
-    font = Terminus 10
-    background_color = "#2d2c28"
-    audible_bell = True
-    scrollback_infinite = True
-  [[theme2]]
-    scrollbar_position = hidden
-    palette = "#4E4E4E:#A9635D:#468459:#84763D:#5879AF:#9C6594:#008592:#CFCFCF:#777777:#FFBBB2:#9DDEAF:#E0CE91:#B3D1FF:#FABDF0:#79E0ED:#FFFFFF"
-    background_darkness = 0.83
-    scrollback_lines = 5000
-    background_type = transparent
-    use_system_font = False
-    cursor_color = "#79e0ed"
-    foreground_color = "#a2a2a2"
-    show_titlebar = False
-    color_scheme = custom
-    font = Terminus 10
-    background_color = "#292929"
-    audible_bell = True
-    scrollback_infinite = True
-[layouts]
-  [[default]]
-    [[[child1]]]
-      type = Terminal
-      parent = window0
-    [[[window0]]]
-      type = Window
-      parent = ""
-[plugins]
+    font = Terminus 9
