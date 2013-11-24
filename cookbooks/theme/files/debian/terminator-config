@@ -86,3 +86,12 @@
     background_type = transparent
     use_system_font = False
     font = Terminus 9
+[layouts]
+  [[default]]
+    [[[child1]]]
+      profile = moodyblue
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
