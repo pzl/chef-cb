@@ -22,7 +22,6 @@
     audible_bell = True
     #scrollback_infinite = True
   [[ICBINB]]
-    #scrollbar_position = hidden
     scrollbar_position = disabled
     show_titlebar=False
     use_theme_colors=False
@@ -30,6 +29,45 @@
     background_color = "#181512"
     cursor_color = "#917154"
     palette = "#252525:#CD546C:#A5AF86:#CD7860:#7A9388:#917154:#767D75:#C2C2A8:#454545:#EF545F:#BDC79E:#E88773:#94B1A3:#989584:#9DA69E:#DBDAC1"
+    background_darkness = 0.83
+    scrollback_lines = 5000
+    background_type = transparent
+    use_system_font = False
+    font = Terminus 9
+  [[pantsu]]
+    scrollbar_position = disabled
+    show_titlebar=False
+    use_theme_colors=False
+    foreground_color = "#a5a5a5"
+    background_color = "#161616"
+    cursor_color = "#dcdccc"
+    palette = "#343434:#802828:#909737:#b27d12:#1e5673:#642337:#196271:#b3b3b3:#424242:#8a3232:#9ca554:#ddb62b:#1e6a9a:#7d2d41:#197885:#b3b3b3"
+    background_darkness = 0.83
+    scrollback_lines = 5000
+    background_type = transparent
+    use_system_font = False
+    font = Terminus 9
+  [[navy&ivory]]
+    scrollbar_position = disabled
+    show_titlebar=False
+    use_theme_colors=False
+    foreground_color = "#E8DFD6"
+    background_color = "#021B21"
+    cursor_color = "#2E3340"
+    palette = "#032C36:#C2454E:#7CBF9E:#8A7A63:#2E3340:#FF5879:#44B5B1:#F2F1B9:#065F73:#EF5847:#A2D9B1:#BEB090:#61778D:#FF99A1:#9ED9D8:#F6F6C9"
+    background_darkness = 0.83
+    scrollback_lines = 5000
+    background_type = transparent
+    use_system_font = False
+    font = Terminus 9
+  [[poppy]]
+    scrollbar_position = disabled
+    show_titlebar=False
+    use_theme_colors=False
+    foreground_color = "#181512"
+    background_color = "#f0f0f0"
+    cursor_color = "#181512"
+    palette = "#373737:#CC4141:#43803D:#7882BF:#DBAB3B:#BF849C:#6AA9B0:#E39036:#474747:#BA2929:#2F632A:#596196:#C79520:#B06A86:#4D8B91:#C97820"
     background_darkness = 0.83
     scrollback_lines = 5000
     background_type = transparent
