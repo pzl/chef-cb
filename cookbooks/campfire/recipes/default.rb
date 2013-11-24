@@ -1,7 +1,9 @@
 package 'irssi'
-package 'ruby-1.9.3'
+package 'ruby1.9.3'
 gem_package 'camper_van'
 package 'libssl-dev'
+
+#camper_van/lib/camper_van/channel.rb => paste handling
 
 #maybe find a way to do .config/irssi/config?
 template '/home/dan/.irssi/config' do
@@ -10,4 +12,12 @@ template '/home/dan/.irssi/config' do
 	owner "dan"
 	group "dan"
 	backup false
+	variables ({
+		:campfire_subdomain => "sample",
+		:campfire_token => "12345690",
+		:campfire_auto_rooms => ["botdev"],
+		:real_name => "Dan Panzarella",
+		:uname => "dan_panzarella",
+		:nick => "dan_panzarella"
+	})
 end
