@@ -79,7 +79,7 @@
     use_theme_colors=False
     foreground_color = "#76d78a"
     background_color = "#0c061f"
-    cursor_color = "#eeeeff"
+    cursor_color = "#8BA8EB"
     palette = "#1e2f4f:#037571:#65cf83:#3b7b98:#027673:#1ea46a:#39afa8:#74d784:#72d6bd:#056e72:#45d345:#326881:#345187:#23a46c:#138a6c:#074646"
     background_darkness = 0.83
     scrollback_lines = 5000
