@@ -4,6 +4,7 @@
     	"recipe[crunch]",
     	"recipe[apt]",
     	"recipe[theme]",
+        "recipe[bspwm]",
     	"recipe[clipit]",
     	"recipe[terminus]",
     	"recipe[vim]",
