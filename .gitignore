@@ -3,3 +3,4 @@
 *.pid
 *.out
 install.sh
+node.json
