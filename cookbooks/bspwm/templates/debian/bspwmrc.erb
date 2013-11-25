@@ -1,0 +1,35 @@
+#!/bin/sh
+
+DESK_MAIN=i
+DESKS_MAIN="ii iii iv v vi vii viii ix x"
+DESK_SEC=I
+DESKS_SEC="II III IV V VI VII VIII IX X"
+
+NUM_MONIT=`bspc query -M | wc -l`
+bspc desktop ^1 -n $DESK_MAIN
+bspc monitor -a $DESKS_MAIN
+
+#if NUM_MONIT > 1
+	#bspc monitor -f next
+	#bspc desktop Desktop2 -n $DESK_SEC
+	#bspc monitor -a $DESK_SEC
+#fi
+
+
+bspc config top_padding				14
+bspc config split_ratio				0.50
+bspc config border_width			1
+bspc config window_gap				12
+bspc config borderless_monocle		true
+bspc config gapless_monocle			true
+bspc config focus_follows_pointer	false
+bspc config auto_alternate			true
+bspc config auto_cancel				true
+bspc config normal_border_color		"#504339"
+bspc config active_border_color		"#504339"
+bspc config focused_border_color	"#605655"
+bspc config presel_border_color		"#990000"
+bspc config urgent_border_color		"#FF0066"
+bspc config normal_frame_opacity	0.0
+bspc config focused_frame_opacity	0.1
+#bspc config rule_command "mycommand"
