@@ -38,6 +38,30 @@ execute "install sxhkd" do
 	action :nothing
 end
 
+ruby_block "enable xinitrc, add bspwm to session list" do
+	block do
+		#f = Chef::Util::FileEdit.new("/etc/slim.conf")
+		f = IO.read("/etc/slim.conf")
+		#disable old session command
+		f.gsub!(
+			/^login_cmd\s+.*Xsession\s+%session/i,
+			'# \0'
+		)
+		#uncomment xinitrc method
+		f.gsub!(
+			/^\#\s*(login_cmd\s+.*xinitrc\s+%session)/i,
+			'\1'
+		)
+		#add bspwm to session list
+		f.gsub!(
+			/^sessions\s+openbox-session/i,
+			'\0,bspwm'
+		)
+		File.open('/etc/slim.conf','w') { |file| file.puts f }
+		#f.write_file
+	end
+	not_if { ::File.exists? "/home/dan/.config/bspwm/bspwmrc"}
+end
 
 directory "/home/dan/.config/bspwm" do
 	owner "dan"
