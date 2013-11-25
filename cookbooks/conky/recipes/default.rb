@@ -1,26 +1,26 @@
 #.conky
 
-location = "/home/dan/"
+location = "/home/dan/.config/"
 dirs = [
-	".conky",
-	".conky/lua",
-	".conky/output",
-	".conky/scripts"
+	"conky",
+	"conky/lua",
+	"conky/output",
+	"conky/scripts"
 ]
 files = [
-	".conky/conky-bar",
-	".conky/conky-bg",
-	".conky/conky-click",
-	".conky/conky-lua",
-	".conky/dzen-demo",
-	".conky/lua/circ.lua",
-	".conky/lua/clicky.lua",
-	".conky/lua/demo.lua",
-	".conky/lua/mail.lua",
-	".conky/lua/start.lua",
-	".conky/output/clicker",
-	".conky/output/ip",
-	".conky/output/sensors.txt",
+	"conky/conky-bar",
+	"conky/conky-bg",
+	"conky/conky-click",
+	"conky/conky-lua",
+	"conky/dzen-demo",
+	"conky/lua/circ.lua",
+	"conky/lua/clicky.lua",
+	"conky/lua/demo.lua",
+	"conky/lua/mail.lua",
+	"conky/lua/start.lua",
+	"conky/output/clicker",
+	"conky/output/ip",
+	"conky/output/sensors.txt",
 ]
 
 dirs.each do |dir|
@@ -46,8 +46,8 @@ files.each do |f|
 end
 
 
-#remote_directory "/home/dan/.conky/" do
-#	path "/home/dan/.conky"
+#remote_directory "/home/dan/.config/conky/" do
+#	path "/home/dan/.config/conky"
 #	files_group "dan"
 #	files_owner "dan"
 #	files_mode 0600
@@ -55,12 +55,12 @@ end
 #	owner "dan"
 #	group "dan"
 #	files_backup 0
-#	source ".conky"
+#	source "conky"
 #	action :create_if_missing
 #end
 
-template location+".conky/scripts/sensors.sh" do
-	source ".conky/scripts/sensors.sh"
+template location+"conky/scripts/sensors.sh" do
+	source "conky/scripts/sensors.sh"
 	mode 0700
 	owner "dan"
 	group "dan"

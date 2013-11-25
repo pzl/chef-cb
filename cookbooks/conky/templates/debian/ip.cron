@@ -1,1 +1,1 @@
-0 */6 * * * dan curl ifconfig.me/ip > /home/dan/.conky/output/ip
+0 */6 * * * dan curl ifconfig.me/ip > /home/dan/.config/conky/output/ip

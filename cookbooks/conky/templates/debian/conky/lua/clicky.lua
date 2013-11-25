@@ -16,12 +16,12 @@ function conky_main()
     cairo_set_line_join(cr,CAIRO_LINE_JOIN_MITER)
     
     if start==1 then
-        os.execute('xdotool search --name clicky behave %@ mouse-click getmouselocation > ~/.conky/output/clicker &')
+        os.execute('xdotool search --name clicky behave %@ mouse-click getmouselocation > ~/.config/conky/output/clicker &')
         print('click handler registered')
         start=0
     end
 
-    f = io.popen("head -1 ~/.conky/output/clicker","r")
+    f = io.popen("head -1 ~/.config/conky/output/clicker","r")
     pos = f:read("*a")
     f:close()
     io.flush()

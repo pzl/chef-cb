@@ -39,7 +39,7 @@ net_avg_samples 5
 override_utf8_locale no
 
 
-lua_load ~/.conky/lua/clicky.lua
+lua_load ~/.config/conky/lua/clicky.lua
 lua_draw_hook_post main
 
 TEXT

@@ -86,7 +86,7 @@ xset b off &
 
 ## Run the conky
 conky -q &
-conky -q -c ~/.conky/conky-bar &
+conky -q -c ~/.config/conky/conky-bar &
 
 #perma-f keys mode, and open gfx driver
 #terminator -e "echo 0 | sudo tee -a /sys/module/hid_apple/parameters/fnmode; sudo amdcccle"

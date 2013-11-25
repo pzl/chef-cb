@@ -25,9 +25,9 @@ default_outline_color white
 
 alignment top_right
 
-gap_y 8
+gap_y 0
 maximum_width 1440
-minimum_size 1440 10
+minimum_size 1440 900
 
 no_buffers yes
 
@@ -51,7 +51,7 @@ color7 234245 #core2
 color8 235235 #core3
 color9 435329 #core4
 
-lua_load ~/.conky/lua/mail.lua
+lua_load ~/.config/conky/lua/circ.lua
 lua_draw_hook_post main
 
 TEXT
