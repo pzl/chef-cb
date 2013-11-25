@@ -1,5 +1,5 @@
 package "xcb"
-package "libxcb-util1-dev"
+package "libxcb-util0-dev"
 package "libxcb-ewmh-dev"
 package "libxcb-randr0-dev"
 package "libxcb-icccm4-dev"
