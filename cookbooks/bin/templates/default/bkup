@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#rsync -nvEzhia --delete /source/from /source/to/
+
+while getopts :hdf:t: opt; do
+    case $opt in
+        h)
+            echo "use: do stuff"
+            exit 1
+            ;;
+        d)
+            echo "dry run"
+            ;;
+        f)
+            echo "copying from $OPTARG"
+            ;;
+        t)
+            echo "to $OPTARG"
+            ;;
+        \?)
+            echo "Invalid arg: -$OPTARG" >&2
+            exit 1
+            ;;
+        :)
+            echo "-$OPTARG requires an argument" >&2
+            exit 1
+            ;;
+    esac
+done

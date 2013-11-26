@@ -1,0 +1,110 @@
+#!/bin/bash
+
+help="Usage: `basename $0` [OPTS] <COMMITS> <DATE>
+   or: `basename $0` [OPTS] <COMMITS> -o<OFFSET> <COMMIT>
+Change git commit dates
+
+    -h              show this help message and exit
+    -a AUTHOR       filter only commits by this author
+    -s SEP-TIME     amount of time to separate multiple commits by
+    -o OFFSET       time offset from commit as final parameter
+    -b              used with -o; offset counts backwards
+    -p              prompt before executing
+    -q              quiet operation
+    -v              verbose mode
+"
+
+quiet=false
+prompt=false
+backwards=false
+verbose=false
+
+while getopts :h?a:s:o:bpqv opt; do
+    case "$opt" in
+    h|\?|\:)
+        echo "$help"
+        exit 0
+        ;;
+    a)
+        auth=$OPTARG
+        ;;
+    s)
+        sep=$OPTARG
+        ;;
+    o)
+        offset=$OPTARG
+        ;;
+    b)
+        backwards=true
+        ;;
+    p)
+        prompt=true
+        ;;
+    q)
+        quiet=true
+        ;;
+    v)
+        if [[ $quiet == true ]]; then
+            echo -e "Error: Cannot be both verbose and quiet" >&2
+            #does printing this violate the quiet part?
+            exit 1
+        fi
+        verbose=true
+        ;;
+    esac
+done
+
+if [[ $backwards == true && $offset == "" ]]; then
+    echo "Error: -b must be used with an offset (-o)" >&2
+    exit 1
+fi
+
+
+commit=${@:$OPTIND:1}
+mdate=${@:$OPTIND+1:1}
+
+if [[ $commit == "" || $mdate == "" ]]; then
+    echo -e "Error: two positional arguments required\n" >&2
+    echo "$help"
+    exit 1;
+fi
+
+iput="Input:
+Commit=$commit
+Date=$mdate
+Author=$auth
+Separator=$sep
+Offset=$offset
+backwards=$backwards
+prompt=$prompt
+quiet=$quiet
+verbose=$verbose
+"
+
+if [[ $verbose == true ]]; then
+    echo "$iput"
+fi
+
+if [[ $commit =~ .*\-.* ]]; then
+    cmlist=$(git rev-list `echo "$commit" | sed 's/\-/\.\.\./'`)
+    commit=$(echo "$commit" | sed 's/.*\-//')
+    if [[ $cmlist != ""  ]]; then
+        cmlist="$cmlist"$'\n'
+    fi
+    cmlist="$cmlist$(git rev-parse $commit)"
+else
+    cmlist=$(git rev-parse $commit)
+fi
+if [ $? -ne 0 ]; then
+    echo "Error: failed to parse $commit" >&2
+    exit 1
+fi
+
+if [[ "$verbose" == true ]]; then
+    echo -e "commit list:\n$cmlist"
+fi
+
+
+#git filter-branch -f --env-filter \
+
+#rm -rf "$(git rev-parse --git-dir)/refs/original/"

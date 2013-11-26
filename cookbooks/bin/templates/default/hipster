@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo /etc/init.d/nginx $1
+sudo /etc/init.d/mongodb $1
