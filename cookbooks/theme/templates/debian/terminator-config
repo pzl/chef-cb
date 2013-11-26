@@ -17,7 +17,7 @@
     cursor_color = "#d8d8d8"
     foreground_color = "#d8d8d8"
     show_titlebar = False
-    font = Terminus 10
+    font = Terminus 9
     background_color = "#2e3436"
     audible_bell = True
     #scrollback_infinite = True
