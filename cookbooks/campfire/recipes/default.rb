@@ -6,6 +6,13 @@ gem_package 'eventmachine'
 
 #camper_van/lib/camper_van/channel.rb => paste handling
 
+directory "#{node[:user][:home]}/.irssi" do
+	owner node[:user][:name]
+	group node[:user][:name]
+	mode 0755
+	action :create
+end
+
 #maybe find a way to do .config/irssi/config?
 template "#{node[:user][:home]}/.irssi/config" do
 	source "irssi.config.erb"
