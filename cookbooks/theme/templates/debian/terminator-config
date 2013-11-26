@@ -86,6 +86,32 @@
     background_type = transparent
     use_system_font = False
     font = Terminus 9
+  [[retro]]
+    scrollbar_position = disabled
+    show_titlebar=False
+    use_theme_colors=False
+    #foreground_color = "#76d78a"
+    background_color = "#2E3436"
+    #cursor_color = "#8BA8EB"
+    palette = "#252525:#FF6C5F:#B8CA4B:#ECFF78:#95B9DE:#CD8FAF:#21E5DF:#B2A191:#888888:#BF3F34:#707D22:#DBB951:#627A92:#CD5291:#1AB2AD:#E8D0C3"
+    background_darkness = 0.83
+    scrollback_lines = 5000
+    background_type = transparent
+    use_system_font = False
+    font = Terminus 9
+  [[murky]]
+    scrollbar_position = disabled
+    show_titlebar=False
+    use_theme_colors=False
+    foreground_color = "#a4a6ab"
+    background_color = "#2d2c28"
+    cursor_color = "#53cad9"
+    palette = "#5B5955:#C4756E:#559A6A:#9B8A4B:#6A8DCA:#B577AC:#019BAA:#DBDDE2:#707277:#F6A299:#82C896:#CAB775:#98BBFB:#E5A4DB:#53CAD9:#F7F9FF"
+    background_darkness = 0.83
+    scrollback_lines = 5000
+    background_type = transparent
+    use_system_font = False
+    font = Terminus 9
 [layouts]
   [[default]]
     [[[child1]]]
