@@ -34,7 +34,7 @@ read i
 
 case "$i" in
 	t|T)
-		INST=$(echo -e "chrome\nconky\ncrunch\ngit\nsublime\nterminus\ntheme\nvim");;
+		INST=$(echo -e "chrome\nconky\ncrunch\ngit\nsublime\nterminus\ntheme\nvim\nbspwm");;
 	f|F)
 		INST=$COOKBOOKS_ALL;;
 	m|M) #manual
