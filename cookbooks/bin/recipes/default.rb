@@ -17,6 +17,6 @@ scripts.each do |file|
 		source file
 		mode 0755
 		owner node[:user][:name]
-		group node [:user][:name]	
+		group node[:user][:name]	
 	end
 end
