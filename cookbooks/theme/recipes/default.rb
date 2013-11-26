@@ -1,3 +1,15 @@
+walls = [
+	"6WDf03g.jpg",
+	"FHSqNyg.jpg",
+	"G8QmxXV.jpg",
+	"K3qPeqO.jpg",
+	"c74bh.jpg",
+	"hGAfhkL.jpg",
+	"lFsPism.jpg",
+	"r6dgeuO.jpg",
+	"yXOMnFM.jpg"
+]
+
 #flatstudio
 execute "flatstudio" do
 	cwd Chef::Config['file_cache_path']
@@ -89,12 +101,16 @@ template "#{node[:user][:home]}/.config/nitrogen/nitrogen.cfg" do
 	mode 0644
 end
 
-cookbook_file "#{node[:user][:home]}/images/wallpapers/6WDf03g.jpg" do
-	source "6WDf03g.jpg"
-	owner node[:user][:name]
-	group node[:user][:name]
-	mode 0644
+
+#wallpapers
+walls.each do |wall|
+	cookbook_file "#{node[:user][:home]}/images/wallpapers/#{wall}" do
+		source wall
+		owner node[:user][:name]
+		group node[:user][:name]
+		mode 0644	end
 end
+
 
 
 #tint2
