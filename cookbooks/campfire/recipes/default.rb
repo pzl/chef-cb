@@ -6,11 +6,11 @@ package 'libssl-dev'
 #camper_van/lib/camper_van/channel.rb => paste handling
 
 #maybe find a way to do .config/irssi/config?
-template '/home/dan/.irssi/config' do
-	source 'irssi.config.erb'
+template "#{node[:user][:home]}/.irssi/config" do
+	source "irssi.config.erb"
 	mode 0755
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	backup false
 	variables ({
 		:campfire_subdomain => "sample",
