@@ -1,7 +1,8 @@
 package 'irssi'
-package 'ruby1.9.3'
-gem_package 'camper_van'
+package 'ruby1.9.1-dev'
 package 'libssl-dev'
+gem_package 'camper_van'
+gem_package 'eventmachine'
 
 #camper_van/lib/camper_van/channel.rb => paste handling
 
