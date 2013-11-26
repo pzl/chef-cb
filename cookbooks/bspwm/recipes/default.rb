@@ -60,38 +60,38 @@ ruby_block "enable xinitrc, add bspwm to session list" do
 		File.open('/etc/slim.conf','w') { |file| file.puts f }
 		#f.write_file
 	end
-	not_if { ::File.exists? "/home/dan/.config/bspwm/bspwmrc"}
+	not_if { ::File.exists? "#{node[:user][:home]}/.config/bspwm/bspwmrc"}
 end
 
-directory "/home/dan/.config/bspwm" do
-	owner "dan"
-	group "dan"
+directory "#{node[:user][:home]}/.config/bspwm" do
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0755
 end
 
-directory "/home/dan/.config/sxhkd" do
-	owner "dan"
-	group "dan"
+directory "#{node[:user][:home]}/.config/sxhkd" do
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0755
 end
 
-template "/home/dan/.config/bspwm/bspwmrc" do
+template "#{node[:user][:home]}/.config/bspwm/bspwmrc" do
 	source "bspwmrc.erb"
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0755
 end
 
-template "/home/dan/.config/sxhkd/sxhkdrc" do
+template "#{node[:user][:home]}/.config/sxhkd/sxhkdrc" do
 	source "sxhkdrc.erb"
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0755
 end
 
-template "/home/dan/.xinitrc" do
+template "#{node[:user][:home]}/.xinitrc" do
 	source "xinitrc.erb"
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0755
 end
