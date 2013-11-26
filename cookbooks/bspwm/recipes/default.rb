@@ -49,8 +49,8 @@ ruby_block "enable xinitrc, add bspwm to session list" do
 		)
 		#uncomment xinitrc method
 		f.gsub!(
-			/^\#\s*(login_cmd\s+.*xinitrc\s+%session)/i,
-			'\1'
+			/^\#\s*(login_cmd\s+.*)(\/bin\/sh\s+\-)(.*xinitrc\s+%session)/i,
+			'\1/bin/bash -login\3'
 		)
 		#add bspwm to session list
 		f.gsub!(
