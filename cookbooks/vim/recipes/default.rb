@@ -1,10 +1,10 @@
 package 'vim'
 
-cookbook_file "/home/dan/.vimrc" do
+cookbook_file "#{node[:user][:home]}/.vimrc" do
 	source ".vimrc"
 	mode 0644
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 end
 
 cookbook_file "/root/.vimrc" do
@@ -15,82 +15,82 @@ cookbook_file "/root/.vimrc" do
 end
 
 #install pathogen
-directory "/home/dan/.vim" do
-	owner "dan"
-	group "dan"
+directory "#{node[:user][:home]}/.vim" do
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0755
 	action :create
 end
 
-directory "/home/dan/.vim/autoload" do
-	owner "dan"
-	group "dan"
+directory "#{node[:user][:home]}/.vim/autoload" do
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0755
 	recursive true
 end
-directory "/home/dan/.vim/bundle" do
-	owner "dan"
-	group "dan"
+directory "#{node[:user][:home]}/.vim/bundle" do
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0755
 	recursive true
 end
-remote_file "/home/dan/.vim/autoload/pathogen.vim" do
+remote_file "#{node[:user][:home]}/.vim/autoload/pathogen.vim" do
 	source "https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim"
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0644
 end
 
 
 #install airline
-git "/home/dan/.vim/bundle/vim-airline" do
+git "#{node[:user][:home]}/.vim/bundle/vim-airline" do
 	repository "https://github.com/bling/vim-airline"
 	action :sync
-	user "dan"
-	group "dan"
+	user node[:user][:name]
+	group node[:user][:name]
 end
 #powerline fonts
-remote_file "/home/dan/.fonts/PowerlineSymbols.otf" do
+remote_file "#{node[:user][:home]}/.fonts/PowerlineSymbols.otf" do
 	source "https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf"
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0644
 	notifies :run, "execute[font cache]", :immediately
 end
-remote_file "/home/dan/.fontconfig/10-powerline-symbols.conf" do
+remote_file "#{node[:user][:home]}/.fontconfig/10-powerline-symbols.conf" do
 	source "https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf"
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0644
 end
 execute "font cache" do
-	cwd "/home/dan"
+	cwd "#{node[:user][:home]}"
 	command "fc-cache -vf .fonts"
 	action :nothing
 end
 
 #vim fugitive for airline-git statusbar
-git "/home/dan/.vim/bundle/vim-fugitive" do
+git "#{node[:user][:home]}/.vim/bundle/vim-fugitive" do
 	repository "https://github.com/tpope/vim-fugitive.git"
 	action :sync
-	user "dan"
-	group "dan"
+	user node[:user][:name]
+	group node[:user][:name]
 end
 
 #vim easymotion
-git "/home/dan/.vim/bundle/vim-easymotion" do
+git "#{node[:user][:home]}/.vim/bundle/vim-easymotion" do
 	repository "https://github.com/Lokaltog/vim-easymotion.git"
 	action :sync
-	user "dan"
-	group "dan"
+	user node[:user][:name]
+	group node[:user][:name]
 end
 
 #bufferline
-#git "/home/dan/.vim/bundle/vim-bufferline" do
+#git "#{node[:user][:home]}/.vim/bundle/vim-bufferline" do
 #	repository "https://github.com/bling/vim-bufferline.git"
 #	action :sync
-#	user "dan"
-#	group "dan"
+#	user node[:user][:name]
+#	group node[:user][:name]
 #end
 
 #

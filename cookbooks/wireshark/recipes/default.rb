@@ -13,7 +13,7 @@ end
 
 group "wireshark" do
 	append true
-	members "dan"
+	members node[:user][:name]
 	action :nothing
 end
 

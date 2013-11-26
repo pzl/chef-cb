@@ -13,116 +13,119 @@ execute "flatstudio" do
 	creates "/usr/share/themes/FlatStudioDark/readme.txt"
 end
 
-cookbook_file "/home/dan/.config/gtk-3.0/settings.ini" do
+template "#{node[:user][:home]}/.config/gtk-3.0/settings.ini" do
 	source "gtk-3-settings"
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0644
 end
 
-cookbook_file "/home/dan/.gtkrc-2.0" do
+template "#{node[:user][:home]}/.gtkrc-2.0" do
 	source ".gtkrc-2.0"
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0644
+	variables({ "home_dir" => node[:user][:home] })
 end
-cookbook_file "/root/.gtkrc-2.0" do
+template "/root/.gtkrc-2.0" do
 	source ".gtkrc-2.0"
 	owner "root"
 	group "root"
 	mode 0644
 end
 
-cookbook_file "/home/dan/.gtk-bookmarks" do
+template "#{node[:user][:home]}/.gtk-bookmarks" do
 	source ".gtk-bookmarks"
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0644
+	variables({ "home_dir" => node[:user][:home] })
 end
 
 
 #thunar
-cookbook_file "/home/dan/.config/Thunar/thunarrc" do
+template "#{node[:user][:home]}/.config/Thunar/thunarrc" do
 	source "thunarrc"
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0644
 end
 
-cookbook_file "/home/dan/.config/Thunar/uca.xml" do
+template "#{node[:user][:home]}/.config/Thunar/uca.xml" do
 	source "uca.xml"
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0644
 end
 
 #openbox
-cookbook_file "/home/dan/.config/openbox/menu.xml" do
+template "#{node[:user][:home]}/.config/openbox/menu.xml" do
 	source "menu.xml"
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0644
 end
 
-cookbook_file "/home/dan/.config/openbox/rc.xml" do
+template "#{node[:user][:home]}/.config/openbox/rc.xml" do
 	source "rc.xml"
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0644
 end
 
 #wallpapers
-cookbook_file "/home/dan/.config/nitrogen/bg-saved.cfg" do
+template "#{node[:user][:home]}/.config/nitrogen/bg-saved.cfg" do
 	source "bg-saved.cfg"
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0644
+	variables({ "home_dir" => node[:user][:home] })
 end
 
-cookbook_file "/home/dan/.config/nitrogen/nitrogen.cfg" do
+template "#{node[:user][:home]}/.config/nitrogen/nitrogen.cfg" do
 	source "nitrogen.cfg"
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0644
 end
 
-cookbook_file "/home/dan/images/wallpapers/6WDf03g.jpg" do
+cookbook_file "#{node[:user][:home]}/images/wallpapers/6WDf03g.jpg" do
 	source "6WDf03g.jpg"
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0644
 end
 
 
 #tint2
-cookbook_file "/home/dan/.config/tint2/tint2rc" do
+template "#{node[:user][:home]}/.config/tint2/tint2rc" do
 	source "tint2rc"
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0644
 	#notifies :run, "execute[tint2restart]", :immediately
 end
 #bug: still runs as root :[
 #execute "tint2restart" do
 #	command "tint2restart"
-#	user "dan"
+#	user node[:user][:name]
 #	action :nothing
 #end
 
 
 #terminator config
-cookbook_file "/home/dan/.config/terminator/config" do
+template "#{node[:user][:home]}/.config/terminator/config" do
 	source "terminator-config"
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0644
 end
 
 #compton -- disable shadows
-cookbook_file "/home/dan/.config/compton.conf" do
+template "#{node[:user][:home]}/.config/compton.conf" do
 	source "compton.conf"
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0644
 	notifies :run, 'execute[compton]', :immediately
 end

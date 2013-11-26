@@ -1,6 +1,6 @@
 #following http://bazaar.launchpad.net/~kicad-testing-committers/kicad/testing/view/head:/scripts/kicad-install.sh
 
-working_tree = "/home/dan/kicad_sources/"
+working_tree = "#{node[:user][:home]}/kicad_sources/"
 cmake_opts =  "-DCMAKE_BUILD_TYPE=Release "
 cmake_opts += "-DUSE_FP_LIB_TABLE=ON "
 cmake_opts += "-DBUILD_GITHUB_PLUGIN=ON " #hey, that sounds interesting
@@ -28,8 +28,8 @@ package 'python-wxgtk2.8' #wxwidgets
 
 #2) working tree
 directory working_tree do
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0755
 	action :create
 	not_if { ::File.exists? "/usr/local/bin/kicad" }
@@ -67,8 +67,8 @@ end
 
 #6) compile source
 directory working_tree+"kicad.bzr/build" do
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0755
 	action :create
 	notifies :run, "execute[cmake kicad]", :immediately
@@ -113,8 +113,8 @@ end
 
 #9) libs
 directory working_tree+"kicad-lib.bzr/build" do
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0755
 	action :create
 	notifies :run, "execute[build kicad-lib]", :immediately

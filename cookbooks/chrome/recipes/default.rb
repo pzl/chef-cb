@@ -28,10 +28,10 @@ end
 
 #add more configs
 
-cookbook_file "/home/dan/.config/google-chrome/Default/Bookmarks" do
+cookbook_file "#{node[:user][:home]}/.config/google-chrome/Default/Bookmarks" do
 	source "bookmark"
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 	action :create_if_missing
 	mode 0600
 end

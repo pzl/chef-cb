@@ -29,18 +29,18 @@ files = [
 	"log"
 ]
 
-directory "/home/dan/.naga" do
-	owner "dan"
-	group "dan"
+directory "#{node[:user][:home]}/.naga" do
+	owner node[:user][:name]
+	group node[:user][:name]
 	mode 0755
 	action :create
 end
 
 files.each do |f|
-	template "/home/dan/.naga/#{f}" do
+	template "#{node[:user][:home]}/.naga/#{f}" do
 		source f
-		owner "dan"
-		group "dan"
+		owner node[:user][:name]
+		group node[:user][:name]
 		mode 0755
 		backup false
 	end

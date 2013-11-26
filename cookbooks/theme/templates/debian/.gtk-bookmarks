@@ -1,0 +1,6 @@
+#file:///media/MrT
+file://<%= @home_dir %>/bin bin
+file://<%= @home_dir %>/documents documents
+file://<%= @home_dir %>/downloads downloads
+file://<%= @home_dir %>/tmp tmp
+file://<%= @home_dir %>/dev

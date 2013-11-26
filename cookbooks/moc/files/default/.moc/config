@@ -602,7 +602,7 @@ CanStartInPlaylist	= no
 #
 # Example:
 #
-OnSongChange = "/home/dan/.moc/onchange %a %r %f %t %n %d"
+#OnSongChange = "/home/dan/.moc/onchange %a %r %f %t %n %d"
 
 # RepeatSongChange.
 # If 'yes' then MOC will execute the 'OnSongChange' command every time a

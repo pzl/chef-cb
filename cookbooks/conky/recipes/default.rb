@@ -1,6 +1,6 @@
 #.conky
 
-location = "/home/dan/.config/"
+location = "#{node[:user][:home]}/.config/"
 dirs = [
 	"conky",
 	"conky/lua",
@@ -25,8 +25,8 @@ files = [
 
 dirs.each do |dir|
 	directory location+dir do
-		owner "dan"
-		group "dan"
+		owner node[:user][:name]
+		group node[:user][:name]
 		mode 0755
 	end
 end
@@ -34,8 +34,8 @@ end
 files.each do |f|
 	template location+f do
 		source f
-		owner "dan"
-		group "dan"
+		owner node[:user][:name]
+		group node[:user][:name]
 		mode 0600
 		backup false
 		#variables
@@ -46,14 +46,14 @@ files.each do |f|
 end
 
 
-#remote_directory "/home/dan/.config/conky/" do
-#	path "/home/dan/.config/conky"
-#	files_group "dan"
-#	files_owner "dan"
+#remote_directory "#{node[:user][:home]}/.config/conky/" do
+#	path "#{node[:user][:home]}/.config/conky"
+#	files_group node[:user][:name]
+#	files_owner node[:user][:name]
 #	files_mode 0600
 #	mode 0755
-#	owner "dan"
-#	group "dan"
+#	owner node[:user][:name]
+#	group node[:user][:name]
 #	files_backup 0
 #	source "conky"
 #	action :create_if_missing
@@ -62,8 +62,8 @@ end
 template location+"conky/scripts/sensors.sh" do
 	source "conky/scripts/sensors.sh"
 	mode 0700
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 end
 
 #cron
@@ -72,4 +72,5 @@ template "/etc/cron.d/ip.cron" do
 	mode 0644
 	owner "root"
 	group "root"
+	variables({ "user" => node[:user][:name] })
 end

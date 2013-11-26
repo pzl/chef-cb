@@ -1,17 +1,17 @@
 package 'git-core'
 
-cookbook_file "/home/dan/.gitconfig" do
+cookbook_file "#{node[:user][:home]}/.gitconfig" do
 	source ".gitconfig"
 	mode 0600
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 end
 
-cookbook_file "/home/dan/.gitcompletion.sh" do
+cookbook_file "#{node[:user][:home]}/.gitcompletion.sh" do
 	source ".gitcompletion.sh"
 	mode 0600
-	owner "dan"
-	group "dan"
+	owner node[:user][:name]
+	group node[:user][:name]
 end
 
 #private keys?

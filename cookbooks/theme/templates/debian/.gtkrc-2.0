@@ -16,4 +16,4 @@ gtk-xft-antialias=1
 gtk-xft-hinting=1
 gtk-xft-hintstyle="hintslight"
 gtk-xft-rgba="rgb"
-include "/home/dan/.gtkrc-2.0.mine"
+include "<%= @home_dir %>/.gtkrc-2.0.mine"
