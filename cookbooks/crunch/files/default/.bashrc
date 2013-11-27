@@ -136,6 +136,13 @@ elif [[ `hostname -s` = plato ]]; then
     LINS="\033[0;34m"
     BARS="\033[0;34m"
     PROM="\033[0;35m"
+elif [[ `hostname -s` = *mac* ]]; then
+    LINS="\033[0;36m"
+    BARS="\033[0;36m"
+    USER="\033[0;32m"
+    HOST="\033[0;32m"
+    ATSG="\033[0;35m"
+    PROM="\033[0;35m"
 fi
 
 if [ -f ~/.gitcompletion.sh ]; then
