@@ -104,6 +104,9 @@ template "#{node[:user][:home]}/.config/bspwm/bspwmrc" do
 	owner node[:user][:name]
 	group node[:user][:name]
 	mode 0755
+	variables({
+		:home => node[:user][:home]
+	})
 end
 
 template "#{node[:user][:home]}/.config/sxhkd/sxhkdrc" do
@@ -115,6 +118,13 @@ end
 
 template "#{node[:user][:home]}/.xinitrc" do
 	source "xinitrc.erb"
+	owner node[:user][:name]
+	group node[:user][:name]
+	mode 0755
+end
+
+template "#{node[:user][:home]}/bin/tiling_rules" do
+	source "tiling_rules"
 	owner node[:user][:name]
 	group node[:user][:name]
 	mode 0755
