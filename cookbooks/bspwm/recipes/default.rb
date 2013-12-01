@@ -19,6 +19,12 @@ git "#{Chef::Config[:file_cache_path]}/sxhkd" do
 	notifies :run, "execute[install sxhkd]", :immediately
 end
 
+git "#{Chef::Config[:file_cache_path]}/xwinfo" do
+	repository "https://github.com/baskerville/xwinfo.git"
+	action :checkout
+	notifies :run, "execute[install xwinfo]", :immediately
+end
+
 
 execute "install bspwm" do
 	cwd "#{Chef::Config[:file_cache_path]}/bspwm"
@@ -31,6 +37,15 @@ end
 
 execute "install sxhkd" do
 	cwd "#{Chef::Config[:file_cache_path]}/sxhkd"
+	command <<-EOH
+		make
+		make install
+	EOH
+	action :nothing
+end
+
+execute "install xwinfo" do
+	cwd "#{Chef::Config[:file_cache_path]}/xwinfo"
 	command <<-EOH
 		make
 		make install
