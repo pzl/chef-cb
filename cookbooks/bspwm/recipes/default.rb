@@ -53,6 +53,15 @@ execute "install xwinfo" do
 	action :nothing
 end
 
+execute "bspwm create_frame" do
+	cwd "#{Chef::Config[:file_cache_path]}/bspwm"
+	command <<-EOH
+		gcc -lxcb-icccm -lxcb -o create_frame contrib/create_frame.c
+		cp create_frame /usr/local/bin
+	EOH
+	action :nothing
+end
+
 ruby_block "enable xinitrc, add bspwm to session list" do
 	block do
 		#f = Chef::Util::FileEdit.new("/etc/slim.conf")
