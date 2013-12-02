@@ -3,7 +3,7 @@
 
 cd $1
 #notify-send "fetching"
-wget -q -nc --no-use-server-timestamps $2 >/dev/null 2>&1
+wget -q -nc --no-use-server-timestamps -A jpg,jpeg,png,gif,bmp,tiff $2 >/dev/null 2>&1
 #notify-send "downloaded"
 #bug: if nc takes effect (duplicate img) timestamp may not update, so no longer newest
 #so ls -t won't get recent img!
