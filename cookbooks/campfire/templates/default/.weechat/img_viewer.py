@@ -17,13 +17,12 @@ SCRIPT_DESC = "An Image viewer for pasted URLs to images"
 
 settings = {
     "buffers" : "",
-    "ignore_buffers" : "#botdev,##news",
+    "ignore_buffers" : "freenode.##news", #comma-separated list of buffers to not listen to
     "url_regex" : "",
     "domain_blacklist" : "",
     "keyword_blacklist" : "",
-    "user_agent" : "WeeChat (http://www.weechat.org)",
     "global" : "off",
-    "debug": "off"
+    "debug": "off" #print debug statements to default buffer
 }
 
 
@@ -69,10 +68,11 @@ def url_recv_cb(data, buffer, time, tags, displayed, highlight, prefix, message)
                 w.prnt("","%s: found image!" % SCRIPT_NAME)
             #domain and keyword blacklisting
             #get image
-            subprocess.call(['/usr/bin/wget','-q','--no-use-server-timestamps','-P',"%s/img_cache" % w.info_get("weechat_dir",""), url], stdout=FNULL, stderr=subprocess.STDOUT)
-            fl = subprocess.Popen(['ls','-t','%s/img_cache' % w.info_get("weechat_dir","")],stdout=subprocess.PIPE)
-            fn = subprocess.Popen(['head','-n','1'],stdin=fl.stdout,stdout=subprocess.PIPE)
-            subprocess.call(['sxiv','-q','-'],stdin=fn.stdout,stdout=FNULL,stderr=subprocess.STDOUT,cwd="%s/img_cache" % w.info_get("weechat_dir",""))
+            #subprocess.call(['/usr/bin/wget','-q','--no-use-server-timestamps','-P',"%s/img_cache" % w.info_get("weechat_dir",""), url], stdout=FNULL, stderr=subprocess.STDOUT)
+            #fl = subprocess.Popen(['ls','-t','%s/img_cache' % w.info_get("weechat_dir","")],stdout=subprocess.PIPE)
+            #fn = subprocess.Popen(['head','-n','1'],stdin=fl.stdout,stdout=subprocess.PIPE)
+            #subprocess.call(['sxiv','-q','-'],stdin=fn.stdout,stdout=FNULL,stderr=subprocess.STDOUT,cwd="%s/img_cache" % w.info_get("weechat_dir",""))
+            subprocess.call(['%s/get_view_img.sh' % w.info_get("weechat_dir",""),'%s/img_cache' % w.info_get("weechat_dir",""),url],stdout=FNULL,stderr=subprocess.STDOUT)
             
             
 
