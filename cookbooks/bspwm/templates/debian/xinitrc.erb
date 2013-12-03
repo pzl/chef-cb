@@ -30,7 +30,7 @@ case $1 in
 		#fi
 		#xscreensaver -no-splash &
 		#xset r rate 250 25 &
-		#xset b off &
+		xset b off &
 		#conky stuff
 		eval `dbus-launch --sh-syntax --exit-with-session`
 		exec ck-launch-session bspwm
