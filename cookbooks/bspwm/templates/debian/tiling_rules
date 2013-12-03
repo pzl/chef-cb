@@ -1,5 +1,5 @@
 #!/bin/bash
-readarray -t PROPS < <(winfo -its $1)
+readarray -t PROPS < <(xwinfo -its $1)
 
 INST=${PROPS[0]}
 TYPE=${PROPS[1]}
