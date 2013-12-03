@@ -33,6 +33,7 @@ label = r'[0-9a-z][-0-9a-z]*[0-9a-z]?'
 domain = r'%s(?:\.%s)*\.[a-z][-0-9a-z]*[a-z]?' % (label, label)
 urlRe = re.compile(r'(\w+://(?:%s|%s)(?::\d+)?(?:/[^\])>\s]*)?)' % (domain, ipAddr), re.I)
 imgRe = re.compile(r'.*[\.#](png|jpe?g|gif|tiff|bmp)$',re.I)
+imgServiceRe = re.compile(r'https?://.*((imgur.com/\w+))$',re.I)
 
 def url_recv_cb(data, buffer, time, tags, displayed, highlight, prefix, message):
     if w.config_get_plugin('debug') == 'on':
@@ -60,20 +61,33 @@ def url_recv_cb(data, buffer, time, tags, displayed, highlight, prefix, message)
 
     #can have multiple imgs per msg?
     for url in urlRe.findall(message):
+        found = False
         if w.config_get_plugin('debug') == 'on':
             w.prnt("","%s: testing url %s" % (SCRIPT_NAME,url))
         #is the url for an image?
         if imgRe.match(url):
+            found = True
             if w.config_get_plugin('debug') == 'on':
                 w.prnt("","%s: found image!" % SCRIPT_NAME)
-            #domain and keyword blacklisting
-            #get image
-            #subprocess.call(['/usr/bin/wget','-q','--no-use-server-timestamps','-P',"%s/img_cache" % w.info_get("weechat_dir",""), url], stdout=FNULL, stderr=subprocess.STDOUT)
-            #fl = subprocess.Popen(['ls','-t','%s/img_cache' % w.info_get("weechat_dir","")],stdout=subprocess.PIPE)
-            #fn = subprocess.Popen(['head','-n','1'],stdin=fl.stdout,stdout=subprocess.PIPE)
-            #subprocess.call(['sxiv','-q','-'],stdin=fn.stdout,stdout=FNULL,stderr=subprocess.STDOUT,cwd="%s/img_cache" % w.info_get("weechat_dir",""))
-            subprocess.call(['%s/get_view_img.sh' % w.info_get("weechat_dir",""),'%s/img_cache' % w.info_get("weechat_dir",""),url],stdout=FNULL,stderr=subprocess.STDOUT)
+        elif imgServiceRe.match(url):
+            found = True
+            if w.config_get_plugin('debug') == 'on':
+                w.prnt("","%s: found image service!" % SCRIPT_NAME)
             
+            if "imgur" in url:
+                url = re.sub(r'.*imgur\.com/(.*)',
+                        r'http://i\.imgur\.com/\1\.jpg',
+                        url)
+            #elif "cl.ly" in url:
+            #keyword blacklisting?
+            #domains are tied to the service. guess the services could be blacklisted
+
+        if found:
+            #blacklist
+            subprocess.call(['%s/get_view_img.sh' % w.info_get("weechat_dir",""),
+                                '%s/img_cache' % w.info_get("weechat_dir",""),
+                                url],
+                            stdout=FNULL,stderr=subprocess.STDOUT)
             
 
     
