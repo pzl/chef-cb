@@ -1,5 +1,6 @@
 package 'libx11-dev'
 package 'libimlib2-dev'
+package 'libgif-dev'
 
 git "#{Chef::Config[:file_cache_path]}/sxiv" do
 	repository "https://github.com/muennich/sxiv.git"
