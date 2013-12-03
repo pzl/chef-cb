@@ -9,11 +9,11 @@ NUM_MONIT=`bspc query -M | wc -l`
 bspc desktop ^1 -n $DESK_MAIN
 bspc monitor -a $DESKS_MAIN
 
-#if NUM_MONIT > 1
-	#bspc monitor -f next
-	#bspc desktop Desktop2 -n $DESK_SEC
-	#bspc monitor -a $DESK_SEC
-#fi
+if [ "$NUM_MONIT" -gt 1 ]; then
+	bspc monitor -f ^2
+	bspc desktop focused -n $DESK_SEC
+	bspc monitor -a $DESKS_SEC
+fi
 
 
 bspc config top_padding				14
