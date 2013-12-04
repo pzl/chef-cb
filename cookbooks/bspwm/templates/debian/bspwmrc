@@ -1,18 +1,13 @@
 #!/bin/sh
 
-DESK_MAIN=i
-DESKS_MAIN="ii iii iv v vi vii viii ix x"
-DESK_SEC=I
-DESKS_SEC="II III IV V VI VII VIII IX X"
+DESKS_MAIN="i ii iii"
+DESKS_SEC="I II III"
 
 NUM_MONIT=`bspc query -M | wc -l`
-bspc desktop ^1 -n $DESK_MAIN
-bspc monitor -a $DESKS_MAIN
+bspc monitor ^1 -d $DESKS_MAIN
 
 if [ "$NUM_MONIT" -gt 1 ]; then
-	bspc monitor -f ^2
-	bspc desktop focused -n $DESK_SEC
-	bspc monitor -a $DESKS_SEC
+	bspc monitor ^2 -d $DESKS_SEC
 fi
 
 
