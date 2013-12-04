@@ -100,7 +100,7 @@ directory "#{node[:user][:home]}/.config/sxhkd" do
 end
 
 template "#{node[:user][:home]}/.config/bspwm/bspwmrc" do
-	source "bspwmrc.erb"
+	source "bspwmrc"
 	owner node[:user][:name]
 	group node[:user][:name]
 	mode 0755
@@ -110,14 +110,14 @@ template "#{node[:user][:home]}/.config/bspwm/bspwmrc" do
 end
 
 template "#{node[:user][:home]}/.config/sxhkd/sxhkdrc" do
-	source "sxhkdrc.erb"
+	source "sxhkdrc"
 	owner node[:user][:name]
 	group node[:user][:name]
 	mode 0755
 end
 
 template "#{node[:user][:home]}/.xinitrc" do
-	source "xinitrc.erb"
+	source ".xinitrc"
 	owner node[:user][:name]
 	group node[:user][:name]
 	mode 0755

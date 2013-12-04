@@ -44,7 +44,7 @@ end
 
 
 template "#{node[:user][:home]}/bin/sub" do
-	source "sub.erb"
+	source "sub"
 	mode 0755
 	owner node[:user][:name]
 	group node[:user][:name]
@@ -52,7 +52,7 @@ template "#{node[:user][:home]}/bin/sub" do
 end
 
 template "#{node[:user][:home]}/bin/sub3" do
-	source "sub.erb"
+	source "sub"
 	mode 0755
 	owner node[:user][:name]
 	group node[:user][:name]
@@ -63,7 +63,7 @@ end
 #but publishing our license to github is a no-no
 #can't always depend on automated private things
 template "#{node[:user][:home]}/.config/sublime-text-2/Settings/License.sublime_license" do
-	source "lic.erb"
+	source "sublime_license"
 	mode 0600
 	owner node[:user][:name]
 	group node[:user][:name]

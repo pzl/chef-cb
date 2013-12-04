@@ -26,7 +26,7 @@ execute "install Logic" do
 end
 
 template "#{node[:user][:home]}/bin/logic" do
-	source "logic.erb"
+	source "logic"
 	mode 0755
 	owner node[:user][:name]
 	group node[:user][:name]
