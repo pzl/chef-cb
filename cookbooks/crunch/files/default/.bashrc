@@ -117,32 +117,32 @@ export GREP_OPTIONS='--color=auto'
 
 alias g="git"
 
-NOCL="\033[0m"
-LINS="\033[0;31m"
-BARS="\033[0;31m"
-USER="\033[0;33m"
-HOST="\033[0;33m"
-ATSG="\033[0;31m"
-CDIR="\033[0;34m"
-PROM="\033[0;32m"
-BNCH="\033[0;36m"
-DRTY="\033[1;33m"
+color_NOCL="\033[0m"
+color_LINS="\033[0;31m"
+color_BARS="\033[0;31m"
+color_USER="\033[0;33m"
+color_HOST="\033[0;33m"
+color_ATSG="\033[0;31m"
+color_CDIR="\033[0;34m"
+color_PROM="\033[0;32m"
+color_BNCH="\033[0;36m"
+color_DRTY="\033[1;33m"
 
 if [[ `hostname -s` = debby* ]]; then
-    LINS="\033[0;32m"
-    BARS="\033[0;32m"
-    PROM="\033[0;35m"
+    color_LINS="\033[0;32m"
+    color_BARS="\033[0;32m"
+    color_PROM="\033[0;35m"
 elif [[ `hostname -s` = plato ]]; then
-    LINS="\033[0;34m"
-    BARS="\033[0;34m"
-    PROM="\033[0;35m"
+    color_LINS="\033[0;34m"
+    color_BARS="\033[0;34m"
+    color_PROM="\033[0;35m"
 elif [[ `hostname -s` = *mac* ]]; then
-    LINS="\033[0;36m"
-    BARS="\033[0;36m"
-    USER="\033[0;32m"
-    HOST="\033[0;32m"
-    ATSG="\033[0;35m"
-    PROM="\033[0;35m"
+    color_LINS="\033[0;36m"
+    color_BARS="\033[0;36m"
+    color_USER="\033[0;32m"
+    color_HOST="\033[0;32m"
+    color_ATSG="\033[0;35m"
+    color_PROM="\033[0;35m"
 fi
 
 if [ -f ~/.gitcompletion.sh ]; then
@@ -178,5 +178,5 @@ retval() {
 
 PROMPT_COMMAND='exitS=$(retval)'
 
-export PS1="\[${LINS}\]┌─\[${BARS}\][\[${USER}\]\u\[${ATSG}\]@\[${HOST}\]\h\[${BARS}\]]\[${LINS}\]──\[${BARS}\][\[${CDIR}\]\w\[${BARS}\]]\n\[${LINS}\]└──\[${BNCH}\]\$(__git_ps1 '(%s)\[${LINS}\]──')\[${PROM}\]\[\$(parse_git_dirty)\]>>\[${NOCL}\]\${exitS} "
+export PS1="\[${color_LINS}\]┌─\[${color_BARS}\][\[${color_USER}\]\u\[${color_ATSG}\]@\[${color_HOST}\]\h\[${color_BARS}\]]\[${color_LINS}\]──\[${color_BARS}\][\[${color_CDIR}\]\w\[${color_BARS}\]]\n\[${color_LINS}\]└──\[${color_BNCH}\]\$(__git_ps1 '(%s)\[${color_LINS}\]──')\[${color_PROM}\]\[\$(parse_git_dirty)\]>>\[${color_NOCL}\]\${exitS} "
 
