@@ -1,5 +1,3 @@
-#package 'irssi'
-#package 'weechat'
 package 'ruby1.9.1-dev'
 package 'libssl-dev'
 gem_package 'camper_van'
@@ -36,7 +34,7 @@ end
 #end
 
 
-#todo move to .confid/weechat using weechat -d (need to set alias in bash from here?)
+#todo move to .config/weechat using weechat -d (need to set alias in bash from here?)
 directory "#{node[:user][:home]}/.weechat" do
 	owner node[:user][:name]
 	group node[:user][:name]
@@ -73,7 +71,7 @@ link "#{node[:user][:home]}/.weechat/perl/autoload/buffers.pl" do
 	group node[:user][:name]
 end
 template "#{node[:user][:home]}/.weechat/weechat.conf" do
-	source ".weechat/weechat.conf"
+	source "weechat.conf"
 	mode 0644
 	owner node[:user][:name]
 	group node[:user][:name]
@@ -83,14 +81,14 @@ template "#{node[:user][:home]}/.weechat/weechat.conf" do
 	})
 end
 template "#{node[:user][:home]}/.weechat/buffers.conf" do
-	source ".weechat/buffers.conf"
+	source "buffers.conf"
 	mode 0644
 	owner node[:user][:name]
 	group node[:user][:name]
 	backup false
 end
 template "#{node[:user][:home]}/.weechat/irc.conf" do
-	source ".weechat/weechat.conf"
+	source "weechat.conf"
 	mode 0644
 	owner node[:user][:name]
 	group node[:user][:name]
@@ -105,30 +103,3 @@ end
 #more config
 #http://dotshare.it/dots/140/
 #http://dotshare.it/dots/395/
-
-=begin
-directory "#{node[:user][:home]}/.irssi" do
-	owner node[:user][:name]
-	group node[:user][:name]
-	mode 0755
-	action :create
-end
-
-#maybe find a way to do .config/irssi/config?
-template "#{node[:user][:home]}/.irssi/config" do
-	source "irssi.config.erb"
-	mode 0755
-	owner node[:user][:name]
-	group node[:user][:name]
-	backup false
-	variables ({
-		:campfire_subdomain => "sample",
-		:campfire_token => "12345690",
-		:campfire_auto_rooms => ["botdev"],
-		:real_name => "Dan Panzarella",
-		:uname => "dan_panzarella",
-		:nick => "dan_panzarella"
-	})
-end
-=end
-
