@@ -151,7 +151,7 @@ fi
 
 function parse_git_dirty {
     if git rev-parse --git-dir > /dev/null 2>&1; then
-        [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo -e "$DRTY"
+        [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo -e "$color_DRTY"
     fi
 }
 
