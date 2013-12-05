@@ -3,12 +3,14 @@ git "#{Chef::Config[:file_cache_path]}/nagad" do
 	repository "https://github.com/pzl/Razer-Naga-HotKey.git"
 	action :checkout
 	notifies :run, "execute[build nagad]", :immediately
+	not_if { ::File.exists? "/usr/local/bin/nagad" }
 end
 
 execute "build nagad" do
 	cwd "#{Chef::Config[:file_cache_path]}/nagad"
 	command "make && make install"
 	action :nothing
+	creates "/usr/local/bin/nagad"
 end
 
 files = [
@@ -72,6 +74,7 @@ git "#{Chef::Config[:file_cache_path]}/razercfg" do
 	repository "https://github.com/mbuesch/razer.git"
 	action :checkout
 	notifies :run, "execute[razercfg make]", :immediately
+	not_if { ::File.exists? "/usr/local/bin/razercfg" }
 end
 
 execute "razercfg make" do
@@ -82,6 +85,7 @@ execute "razercfg make" do
 		make install
 	EOH
 	action :nothing
+	creates "/usr/local/bin/razercfg"
 end
 
 #todo init scripts for razerd
