@@ -138,7 +138,7 @@ template "#{node[:user][:home]}/bin/tiling_rules" do
 end
 
 template "#{node[:user][:home]}/bin/winfo" do
-	source "tiling_rules"
+	source "winfo"
 	owner node[:user][:name]
 	group node[:user][:name]
 	mode 0755
