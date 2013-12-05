@@ -88,7 +88,7 @@ template "#{node[:user][:home]}/.weechat/buffers.conf" do
 	backup false
 end
 template "#{node[:user][:home]}/.weechat/irc.conf" do
-	source "weechat.conf"
+	source "irc.conf"
 	mode 0644
 	owner node[:user][:name]
 	group node[:user][:name]
