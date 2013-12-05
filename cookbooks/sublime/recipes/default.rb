@@ -67,6 +67,7 @@ template "#{node[:user][:home]}/.config/sublime-text-2/Settings/License.sublime_
 	mode 0600
 	owner node[:user][:name]
 	group node[:user][:name]
+	action :create_if_missing
 end
 
 #@todo
