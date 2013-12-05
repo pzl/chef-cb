@@ -1,6 +1,8 @@
 scripts = [
 	"bkup",
 	"colors",
+	"colors256",
+	"cw",
 	"diam",
 	"gdate",
 	"hipster",
