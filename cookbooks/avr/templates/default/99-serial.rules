@@ -1,0 +1,5 @@
+#
+# Serial rules to allow user access to /dev/ttyS*
+#
+
+KERNEL=="ttyS[0-9]*", SUBSYSTEM=="tty", GROUP="<%= @group %>"
