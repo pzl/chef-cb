@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ID=$(xwininfo | grep -Po "0x[\da-f]+" -m1)
+xwinfo -cints $ID
