@@ -11,18 +11,21 @@ git "#{Chef::Config[:file_cache_path]}/bspwm" do
 	repository "https://github.com/baskerville/bspwm.git"
 	action :checkout
 	notifies :run, "execute[install bspwm]", :immediately
+	not_if { ::File.exists? "/usr/local/bin/bspwm" }
 end
 
 git "#{Chef::Config[:file_cache_path]}/sxhkd" do
 	repository "https://github.com/baskerville/sxhkd.git"
 	action :checkout
 	notifies :run, "execute[install sxhkd]", :immediately
+	not_if { ::File.exists? "/usr/local/bin/sxhkd" }
 end
 
 git "#{Chef::Config[:file_cache_path]}/xwinfo" do
 	repository "https://github.com/baskerville/xwinfo.git"
 	action :checkout
 	notifies :run, "execute[install xwinfo]", :immediately
+	not_if { ::File.exists? "/usr/local/bin/xwinfo" }
 end
 
 
@@ -33,6 +36,7 @@ execute "install bspwm" do
 		make install
 	EOH
 	action :nothing
+	creates "/usr/local/bin/bspwm"
 end
 
 execute "install sxhkd" do
@@ -42,6 +46,7 @@ execute "install sxhkd" do
 		make install
 	EOH
 	action :nothing
+	creates "/usr/local/bin/sxhkd"
 end
 
 execute "install xwinfo" do
@@ -51,6 +56,7 @@ execute "install xwinfo" do
 		make install
 	EOH
 	action :nothing
+	creates "/usr/local/bin/xwinfo"
 end
 
 execute "bspwm create_frame" do
@@ -60,6 +66,7 @@ execute "bspwm create_frame" do
 		cp create_frame /usr/local/bin
 	EOH
 	action :nothing
+	creates "/usr/local/bin/create_frame"
 end
 
 ruby_block "enable xinitrc, add bspwm to session list" do
