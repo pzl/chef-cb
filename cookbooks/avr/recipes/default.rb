@@ -3,7 +3,7 @@ package 'avr-libc'
 package 'binutils-avr'
 package 'avrdude'
 
-cookbook_file "#{node[:user][:home]}/.avrduderc" do
+template "#{node[:user][:home]}/.avrduderc" do
 	source ".avrduderc"
 	mode 0644
 	owner node[:user][:name]
