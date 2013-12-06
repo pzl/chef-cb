@@ -6,6 +6,9 @@ template "/etc/udev/rules.d/10-Rigol.rules" do
 	owner "root"
 	group "root"
 	mode 0644
+	variables(
+		:group => node[:user][:name]
+	)
 	notifies :run, "execute[udev-rigol]", :immediately
 end
 

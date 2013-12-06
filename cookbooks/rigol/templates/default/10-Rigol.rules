@@ -2,6 +2,8 @@
 # Rigol DG1000 Series
 # This file should be installed to /etc/udev/rules.d so that you can access the scope without being root
 
-KERNEL=="usbtmc0", MODE="0666"
+#KERNEL=="usbtmc0", MODE="0666"
 
-#SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTR{idVendor}=="1ab1", ATTR{idProduct}=="0588", MODE="0666"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1ab1", ATTRS{idProduct}=="0588", SYMLINK+="rigol-scope", GROUP="<%= @group %>"
+
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0400", ATTRS{idProduct}=="09c4", SYMLINK+="rigol-awg", GROUP="<%= @group %>"
