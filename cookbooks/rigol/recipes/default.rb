@@ -1,7 +1,7 @@
 #Rigol scope
 #todo: target product instead of whole driver
 
-cookbook_file "/etc/udev/rules.d/10-Rigol.rules" do
+template "/etc/udev/rules.d/10-Rigol.rules" do
 	source "10-Rigol.rules"
 	owner "root"
 	group "root"
