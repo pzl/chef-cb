@@ -41,7 +41,7 @@ case $1 in
 		nm-applet &
 		pnmixer &
 
-		conky -q -c ~/.conky/conky-bar &
+		conky -q -c ~/.config/conky/conky-bar &
 
 		eval `dbus-launch --sh-syntax --exit-with-session`
 		exec ck-launch-session bspwm
