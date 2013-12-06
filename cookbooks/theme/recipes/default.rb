@@ -137,6 +137,14 @@ template "#{node[:user][:home]}/.config/terminator/config" do
 	mode 0644
 end
 
+#Xresource config
+template "#{node[:user][:home]}/.config/.Xresources" do
+	source ".Xresources"
+	owner node[:user][:name]
+	group node[:user][:name]
+	mode 0644
+end
+
 #compton -- disable shadows
 template "#{node[:user][:home]}/.config/compton.conf" do
 	source "compton.conf"

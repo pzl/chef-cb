@@ -1,5 +1,7 @@
 #!/bin/sh
 
+[[ -f ~/.config/.Xresources ]] && xrdb -merge ~/.config/.Xresources
+
 case $1 in
 	openbox-session)
 		exec openbox-session;;
