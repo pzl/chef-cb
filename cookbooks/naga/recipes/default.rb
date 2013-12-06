@@ -26,8 +26,6 @@ files = [
 	"button_10",
 	"button_11",
 	"button_12",
-	"button_back",
-	"button_forward",
 	"log"
 ]
 
@@ -47,20 +45,6 @@ files.each do |f|
 		backup false
 	end
 end
-
-#~/.config/openbox/rc.xml
-# in <mouse>
-#<context name="Frame Desktop">
-#<mousebind button="Button9" action="Press">
-#  <action name="Execute">
-#    <command>~/.naga/button_forward</command>
-#  </action>
-#</mousebind>
-#<mousebind button="Button8" action="Press">
-#  <action name="Execute">
-#    <command>~/.naga/button_back</command>
-#  </action>
-#</mousebind>
 
 
 #razercfg
