@@ -1,11 +1,9 @@
 #!/bin/sh
 
-DEFAULT_SESSION=openbox-session
-
 case $1 in
 	openbox-session)
 		exec openbox-session;;
-	bspwm)
+	bspwm|*)
 		xsetroot -cursor_name left_ptr #bspwm uses default X11 cursor, an X
 		hsetroot -solid "#2E3436" #solid color bg if wallpaper fails
 		nitrogen --restore #wallpaper
@@ -47,9 +45,5 @@ case $1 in
 		exec ck-launch-session bspwm
 		#or exec dbus-launch --sh-syntax --exit-with-session bspwm > ~/.config/bspwm/session.log 2>&1
 		#or just exec bspwm
-		;;
-
-	*)
-		exec $DEFAULT_SESSION
 		;;
 esac
