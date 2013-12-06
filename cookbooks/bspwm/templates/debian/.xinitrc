@@ -37,7 +37,7 @@ case $1 in
 		xset b off &
 
 		#tint stuff
-		tint2
+		tint2 &
 		nm-applet &
 		#pnmixer? volume
 
