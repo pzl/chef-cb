@@ -1,2 +1,3 @@
 default_programmer = "stk500v2";
 default_serial= "/dev/ttyS1";
+#default_serial = "/dev/ttyUSB0";

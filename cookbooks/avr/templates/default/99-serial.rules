@@ -2,4 +2,8 @@
 # Serial rules to allow user access to /dev/ttyS*
 #
 
+# ttyS#
 KERNEL=="ttyS[0-9]*", SUBSYSTEM=="tty", GROUP="<%= @group %>"
+
+#ttyUSB#
+KERNEL=="ttyUSB[0-9]*", SUBSYSTEM=="tty", GROUP="<%= @group %>"
