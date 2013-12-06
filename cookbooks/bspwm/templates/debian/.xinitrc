@@ -39,7 +39,7 @@ case $1 in
 		#tint stuff
 		tint2 &
 		nm-applet &
-		#pnmixer? volume
+		pnmixer &
 
 		conky -q -c ~/.conky/conky-bar &
 
