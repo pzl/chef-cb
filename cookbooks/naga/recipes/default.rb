@@ -29,7 +29,7 @@ files = [
 	"log"
 ]
 
-directory "#{node[:user][:home]}/.naga" do
+directory "#{node[:user][:home]}/.config/naga" do
 	owner node[:user][:name]
 	group node[:user][:name]
 	mode 0755
@@ -37,7 +37,7 @@ directory "#{node[:user][:home]}/.naga" do
 end
 
 files.each do |f|
-	template "#{node[:user][:home]}/.naga/#{f}" do
+	template "#{node[:user][:home]}/.config/naga/#{f}" do
 		source f
 		owner node[:user][:name]
 		group node[:user][:name]
