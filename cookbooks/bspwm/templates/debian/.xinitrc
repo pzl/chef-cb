@@ -12,7 +12,7 @@ case $1 in
 		compton --config ~/.config/compton.conf -b #compositor
 		eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 		sxhkd & #keybindings
-		thunar --daemon & #file manager
+		dbus-launch thunar & #file manager
 		xfce4-volumed & #volume keys daemon
 		xfce4-power-manager & #power manager bus?
 
