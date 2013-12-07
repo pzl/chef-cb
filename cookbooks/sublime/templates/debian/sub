@@ -21,4 +21,9 @@
 #Filenames may be given a :line or :line:column suffix to open at a specific
 #location.
 
-<%= @dir %>/sublime_text "$@" >/dev/null 2>&1 &
+auto_param=''
+
+if [ $(ps aux | grep "<%= @dir %>" | wc -l) -gt 1 ]; then
+	auto_param='-n'
+fi
+"<%= @path %>/<%= @dir %>/sublime_text" $auto_param "$@" >/dev/null 2>&1

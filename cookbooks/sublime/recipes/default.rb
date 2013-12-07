@@ -48,7 +48,10 @@ template "#{node[:user][:home]}/bin/sub" do
 	mode 0755
 	owner node[:user][:name]
 	group node[:user][:name]
-	variables  :dir => "#{node[:user][:home]}/bin/Sublime\\ Text\\ 2" 
+	variables (
+		:path => "#{node[:user][:home]}/bin",
+		:dir => "Sublime Text 2"
+	)
 end
 
 template "#{node[:user][:home]}/bin/sub3" do
@@ -56,7 +59,10 @@ template "#{node[:user][:home]}/bin/sub3" do
 	mode 0755
 	owner node[:user][:name]
 	group node[:user][:name]
-	variables  :dir => "#{node[:user][:home]}/bin/sublime_text_3" 
+	variables (
+		:path => "#{node[:user][:home]}/bin",
+		:dir => "sublime_text_3"
+	)
 end
 
 #we own a single-user license (available upon request!)
