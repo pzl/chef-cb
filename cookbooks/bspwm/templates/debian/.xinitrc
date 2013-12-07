@@ -6,13 +6,14 @@ case $1 in
 	openbox-session)
 		exec openbox-session;;
 	bspwm|*)
+		eval `dbus-launch --sh-syntax --exit-with-session`
 		xsetroot -cursor_name left_ptr #bspwm uses default X11 cursor, an X
 		hsetroot -solid "#2E3436" #solid color bg if wallpaper fails
 		nitrogen --restore #wallpaper
 		compton --config ~/.config/compton.conf -b #compositor
 		eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 		sxhkd & #keybindings
-		dbus-launch thunar & #file manager
+		thunar --daemon & #file manager
 		xfce4-volumed & #volume keys daemon
 		xfce4-power-manager & #power manager bus?
 
@@ -43,7 +44,6 @@ case $1 in
 
 		conky -q -c ~/.config/conky/conky-bar &
 
-		eval `dbus-launch --sh-syntax --exit-with-session`
 		exec ck-launch-session bspwm
 		#or exec dbus-launch --sh-syntax --exit-with-session bspwm > ~/.config/bspwm/session.log 2>&1
 		#or just exec bspwm
