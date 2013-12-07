@@ -151,6 +151,45 @@
     background_type = transparent
     use_system_font = False
     font = Terminus 9
+  [[IvoryLight]]
+    scrollbar_position = disabled
+    show_titlebar=False
+    use_theme_colors=False
+    foreground_color = "#6d727e"
+    background_color = "#fef9ec"
+    cursor_color = "#007693"
+    palette = "#c5c1b4:#e75c58:#00a250:#a08a00:#208ffb:#d160c4:#00a4c1:#3e424d:#a1a6b2:#b22b31:#007427:#715f00:#0065ca:#a03196:#007693:#3e424d"
+    background_darkness = 0.83
+    scrollback_lines = 5000
+    background_type = transparent
+    use_system_font = False
+    font = Terminus 9
+  [[Bleh]]
+    scrollbar_position = disabled
+    show_titlebar=False
+    use_theme_colors=False
+    foreground_color = "#8c817e"
+    background_color = "#dddac6"
+    cursor_color = "#8c817e"
+    palette = "#666666:#996578:#889965:#998565:#657a99:#8b6599:#65998d:#a5a5a4:#8c847f:#bd4b76:#95b548:#bd814b:#4c83bf:#a04bbd:#4dbda8:#848484"
+    background_darkness = 0.83
+    scrollback_lines = 5000
+    background_type = transparent
+    use_system_font = False
+    font = Terminus 9
+  [[GetFresh]]
+    scrollbar_position = disabled
+    show_titlebar=False
+    use_theme_colors=False
+    foreground_color = "#ddccbb"
+    background_color = "#151515"
+    #cursor_color = "#8c817e"
+    palette = "#393939:#BF1E2D:#9DBA3A:#F5B915:#1CA1DB:#652F90:#EA7D24:#E7E8E9:#AF875F:#E7212A:#A9C938:#F7D325:#00AFDA:#894E9F:#F79321:#F3F3F4"
+    background_darkness = 0.83
+    scrollback_lines = 5000
+    background_type = transparent
+    use_system_font = False
+    font = Terminus 9
 [layouts]
   [[default]]
     [[[child1]]]
