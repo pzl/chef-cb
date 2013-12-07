@@ -57,6 +57,13 @@ remote_file "#{node[:user][:home]}/.fonts/PowerlineSymbols.otf" do
 	mode 0644
 	notifies :run, "execute[font cache]", :immediately
 end
+remote_file "#{node[:user][:home]}/.fonts/Inconsolata for Powerline.otf" do
+	source "https://github.com/Lokaltog/powerline-fonts/raw/master/Inconsolata%20for%20Powerline.otf"
+	owner node[:user][:name]
+	group node[:user][:name]
+	mode 0644
+	notifies :run, "execute[font cache]", :immediately
+end
 remote_file "#{node[:user][:home]}/.fontconfig/10-powerline-symbols.conf" do
 	source "https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf"
 	owner node[:user][:name]

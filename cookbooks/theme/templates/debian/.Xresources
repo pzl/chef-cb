@@ -9,7 +9,7 @@ Xft.hintstyle: hintslight
 !Xft.lcdfilter: lcddefault
 
 ! urxvt ----------------------------------
-urxvt*font: xft:terminus:size=7
+urxvt*font: xft:terminus:pixelsize=7,xft:PowerlineSymbols:pixelsize=7,xft:Inconsolata for Powerline
 urxvt*boldFont: xft:terminus:bold:size=7
 
 
@@ -69,4 +69,4 @@ urxvt*depth: 32 !transparency
 !other settings
 urxvt*saveLines: 12000
 urxvt*scrollStyle: plain
-urxvt*imLocale: en_US.UTF-8
+!urxvt*imLocale: en_US.UTF-8
