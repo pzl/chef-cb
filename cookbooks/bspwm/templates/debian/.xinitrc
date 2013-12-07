@@ -44,7 +44,7 @@ case $1 in
 
 		conky -q -c ~/.config/conky/conky-bar &
 
-		exec ck-launch-session bspwm
+		exec ssh-agent ck-launch-session bspwm
 		#or exec dbus-launch --sh-syntax --exit-with-session bspwm > ~/.config/bspwm/session.log 2>&1
 		#or just exec bspwm
 		;;
