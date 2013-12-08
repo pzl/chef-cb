@@ -1,10 +1,14 @@
 walls = [
 	"6WDf03g.jpg",
+	"AcRfpIM.jpg",
 	"FHSqNyg.jpg",
 	"G8QmxXV.jpg",
 	"K3qPeqO.jpg",
+	"WjDm2Bv.jpg",
 	"c74bh.jpg",
+	"e7XpEQu.jpg",
 	"hGAfhkL.jpg",
+	"jLbCzTk.jpg",
 	"lFsPism.jpg",
 	"r6dgeuO.jpg",
 	"yXOMnFM.jpg"
