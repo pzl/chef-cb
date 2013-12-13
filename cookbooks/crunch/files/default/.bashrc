@@ -181,3 +181,9 @@ PROMPT_COMMAND='exitS=$(retval)'
 
 export PS1="\[${color_LINS}\]┌─\[${color_BARS}\][\[${color_USER}\]\u\[${color_ATSG}\]@\[${color_HOST}\]\h\[${color_BARS}\]]\[${color_LINS}\]──\[${color_BARS}\][\[${color_CDIR}\]\w\[${color_BARS}\]]\n\[${color_LINS}\]└──\[${color_BNCH}\]\$(__git_ps1 '(%s)\[${color_LINS}\]──')\[${color_PROM}\]\[\$(parse_git_dirty)\]>>\[${color_NOCL}\]\${exitS} "
 
+#listen &
+case $TERM in
+    rxvt*)
+        tailf ~/.config/color &
+        ;;
+esac

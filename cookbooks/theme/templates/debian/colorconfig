@@ -1,0 +1,225 @@
+{
+    "themes": {
+        "default": {
+            "foreground_color": "#d8d8d8",
+            "background_color": "[75]#2e3436",
+            "cursor_color": "#d8d8d8",
+            "palette": {
+                "black": ["#555555", "#888888"],
+                "red": ["#cc5555", "#ff8888"],
+                "green": ["#66bb88", "#99eebb"],
+                "yellow": ["#cc8855", "#ffbb88"],
+                "blue": ["#6688bb", "#99bbee"],
+                "magenta": ["#cc5588", "#ff88bb"],
+                "cyan": ["#66bbbb", "#99eeee"],
+                "white": ["#bbbbbb", "#eeeeee"]
+            }
+        },
+        "ICBINB": {
+            "foreground_color": "#eddcd3",
+            "background_color": "[83]#181512",
+            "cursor_color": "#917154",
+            "palette": {
+                "black": ["#252525", "#454545"],
+                "red": ["#CD546C", "#EF545F"],
+                "green": ["#A5AF86", "#BDC79E"],
+                "yellow": ["#CD7860", "#E88773"],
+                "blue": ["#7A9388", "#94B1A3"],
+                "magenta": ["#917154", "#989584"],
+                "cyan": ["#767D75", "#9DA69E"],
+                "white": ["#C2C2A8", "#DBDAC1"]
+            }
+        },
+        "pantsu": {
+            "foreground_color": "#a5a5a5",
+            "background_color": "[83]#161616",
+            "cursor_color": "#dcdccc",
+            "palette": {
+                "black": ["#343434", "#424242"],
+                "red": ["#802828", "#8a3232"],
+                "green": ["#909737", "#9ca554"],
+                "yellow": ["#b27d12", "#ddb62b"],
+                "blue": ["#1e5673", "#1e6a9a"],
+                "magenta": ["#642337", "#7d2d41"],
+                "cyan": ["#196271", "#197885"],
+                "white": ["#b3b3b3", "#b3b3b3"]
+            }
+        },
+        "navy&ivory": {
+            "foreground_color": "#E8DFD6",
+            "background_color": "[75]#021B21",
+            "cursor_color": "#2E3340",
+            "palette": {
+                "black": ["#032C36", "#065F73"],
+                "red": ["#C2454E", "#EF5847"],
+                "green": ["#7CBF9E", "#A2D9B1"],
+                "yellow": ["#8A7A63", "#BEB090"],
+                "blue": ["#2E3340", "#61778D"],
+                "magenta": ["#FF5879", "#FF99A1"],
+                "cyan": ["#44B5B1", "#9ED9D8"],
+                "white": ["#F2F1B9", "#F6F6C9"]
+            }
+        },
+        "poppy": {
+            "foreground_color": "#181512",
+            "background_color": "[62]#f0f0f0",
+            "cursor_color": "#181512",
+            "palette": {
+                "black": ["#373737", "#474747"],
+                "red": ["#CC4141", "#BA2929"],
+                "green": ["#43803D", "#2F632A"],
+                "yellow": ["#7882BF", "#596196"],
+                "blue": ["#DBAB3B", "#C79520"],
+                "magenta": ["#BF849C", "#B06A86"],
+                "cyan": ["#6AA9B0", "#4D8B91"],
+                "white": ["#E39036", "#C97820"]
+            }
+        },
+        "moodyblue": {
+            "foreground_color": "#76d78a",
+            "background_color": "[83]#0c061f",
+            "cursor_color": "#8BA8EB",
+            "palette": {
+                "black": ["#1e2f4f", "#72d6bd"],
+                "red": ["#037571", "#056e72"],
+                "green": ["#65cf83", "#45d345"],
+                "yellow": ["#3b7b98", "#326881"],
+                "blue": ["#027673", "#345187"],
+                "magenta": ["#1ea46a", "#23a46c"],
+                "cyan": ["#39afa8", "#138a6c"],
+                "white": ["#74d784", "#074646"]
+            }
+        },
+        "retro": {
+            "background_color": "[83]#2E3436",
+            "palette": {
+                "black": ["#252525", "#888888"],
+                "red": ["#FF6C5F", "#BF3F34"],
+                "green": ["#B8CA4B", "#707D22"],
+                "yellow": ["#ECFF78", "#DBB951"],
+                "blue": ["#95B9DE", "#627A92"],
+                "magenta": ["#CD8FAF", "#CD5291"],
+                "cyan": ["#21E5DF", "#1AB2AD"],
+                "white": ["#B2A191", "#E8D0C3"]
+            }
+        },
+        "murky": {
+            "foreground_color": "#a4a6ab",
+            "background_color": "[83]#2d2c28",
+            "cursor_color": "#53cad9",
+            "palette": {
+                "black": ["#5B5955", "#707277"],
+                "red": ["#C4756E", "#F6A299"],
+                "green": ["#559A6A", "#82C896"],
+                "yellow": ["#9B8A4B", "#CAB775"],
+                "blue": ["#6A8DCA", "#98BBFB"],
+                "magenta": ["#B577AC", "#E5A4DB"],
+                "cyan": ["#019BAA", "#53CAD9"],
+                "white": ["#DBDDE2", "#F7F9FF"]
+            }
+        },
+        "VanillaTaffy": {
+            "foreground_color": "#707070",
+            "background_color": "[25]#f3f3f3",
+            "cursor_color": "#e4e4e4",
+            "palette": {
+                "black": ["#d3d3d3", "#b3b3b3"],
+                "red": ["#ff807a", "#ff605a"],
+                "green": ["#b4c158", "#94c138"],
+                "yellow": ["#f59335", "#f59335"],
+                "blue": ["#bbdbe2", "#9bbbe2"],
+                "magenta": ["#fec7cd", "#d2a4b4"],
+                "cyan": ["#95c1c0", "#75A1A0"],
+                "white": ["#707070", "#909090"]
+            }
+        },
+        "Frost": {
+            "foreground_color": "#9bbbc6",
+            "background_color": "[73]#1c1c23",
+            "cursor_color": "#1c1c23",
+            "palette": {
+                "black": ["#323246", "#323246"],
+                "red": ["#5A7882", "#5A7882"],
+                "green": ["#8C8CA0", "#8C8CA0"],
+                "yellow": ["#1E828C", "#1E828C"],
+                "blue": ["#3C788C", "#3C788C"],
+                "magenta": ["#6EA0B4", "#6EA0B4"],
+                "cyan": ["#6E8CA0", "#6E8CA0"],
+                "white": ["#96BEC8", "#96BEC8"]
+            }
+        },
+        "clueless": {
+            "foreground_color": "#0d1926",
+            "background_color": "[50]#d9e6f2",
+            "cursor_color": "#53cad9",
+            "palette": {
+                "black": ["#0d1926", "#3A3A4C"],
+                "red": ["#b87a7a", "#954B44"],
+                "green": ["#7ab87a", "#bddbbd"],
+                "yellow": ["#7C3D5A", "#793B5C"],
+                "blue": ["#A83246", "#EABD9A"],
+                "magenta": ["#8A576C", "#67677B"],
+                "cyan": ["#7ab8b8", "#bddbdb"],
+                "white": ["#d9d9d9", "#222222"]
+            }
+        },
+        "IvoryLight": {
+            "foreground_color": "#6d727e",
+            "background_color": "[50]#fef9ec",
+            "cursor_color": "#007693",
+            "palette": {
+                "black": ["#c5c1b4", "#a1a6b2"],
+                "red": ["#e75c58", "#b22b31"],
+                "green": ["#00a250", "#007427"],
+                "yellow": ["#a08a00", "#715f00"],
+                "blue": ["#208ffb", "#0065ca"],
+                "magenta": ["#d160c4", "#a03196"],
+                "cyan": ["#00a4c1", "#007693"],
+                "white": ["#3e424d", "#3e424d"]
+            }
+        },
+        "Bleh": {
+            "foreground_color": "#8c817e",
+            "background_color": "[13]#dddac6",
+            "cursor_color": "#8c817e",
+            "palette": {
+                "black": ["#666666", "#8c847f"],
+                "red": ["#996578", "#bd4b76"],
+                "green": ["#889965", "#95b548"],
+                "yellow": ["#998565", "#bd814b"],
+                "blue": ["#657a99", "#4c83bf"],
+                "magenta": ["#8b6599", "#a04bbd"],
+                "cyan": ["#65998d", "#4dbda8"],
+                "white": ["#a5a5a4", "#848484"]
+            }
+        },
+        "GetFresh": {
+            "foreground_color": "#ddccbb",
+            "background_color": "[55]#151515",
+            "palette": {
+                "black": ["#393939", "#AF875F"],
+                "red": ["#BF1E2D", "#E7212A"],
+                "green": ["#9DBA3A", "#A9C938"],
+                "yellow": ["#F5B915", "#F7D325"],
+                "blue": ["#1CA1DB", "#00AFDA"],
+                "magenta": ["#652F90", "#894E9F"],
+                "cyan": ["#EA7D24", "#F79321"],
+                "white": ["#E7E8E9", "#F3F3F4"]
+            }
+        }
+    },
+    "osc": {
+        "foreground_color": 10,
+        "background_color": [11,708],
+        "cursor_color": 12,
+        "palette": 4,
+        "black": 0,
+        "red": 1,
+        "green": 2,
+        "yellow": 3,
+        "blue": 4,
+        "magenta": 5,
+        "cyan": 6,
+        "white": 7
+    }
+}

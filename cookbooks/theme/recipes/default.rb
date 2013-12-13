@@ -149,6 +149,32 @@ template "#{node[:user][:home]}/.config/.Xresources" do
 	mode 0644
 end
 
+#rxvt color command
+template "#{node[:user][:home]}/.config/colorconfig" do
+	source "colorconfig"
+	owner node[:user][:name]
+	group node[:user][:name]
+	mode 0644
+end
+
+template "#{node[:user][:home]}/bin/sc" do
+	source "sc"
+	owner node[:user][:name]
+	group node[:user][:name]
+	mode 0700
+	variables(
+		:userhome => node[:user][:home]
+	)
+end
+
+file "#{node[:user][:home]}/.config/color" do
+	owner node[:user][:name]
+	group node[:user][:name]
+	mode 0600
+	action :create_if_missing
+end
+
+
 #compton -- disable shadows
 template "#{node[:user][:home]}/.config/compton.conf" do
 	source "compton.conf"
