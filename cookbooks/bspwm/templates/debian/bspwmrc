@@ -27,4 +27,4 @@ bspc config presel_border_color		"#990000"
 bspc config urgent_border_color		"#FF0066"
 bspc config normal_frame_opacity	0.0
 bspc config focused_frame_opacity	0.1
-bspc config rule_command "<%= @home %>/bin/tiling_rules"
+bspc config external_rules_command "<%= @home %>/bin/tiling_rules"
