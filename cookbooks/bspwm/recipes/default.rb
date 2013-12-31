@@ -4,6 +4,7 @@ package "libxcb-ewmh-dev"
 package "libxcb-randr0-dev"
 package "libxcb-icccm4-dev"
 package "libxcb-keysyms1-dev"
+package "libxcb-xinerama0-dev"
 package "gcc"
 package "make"
 
