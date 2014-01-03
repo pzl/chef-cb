@@ -158,8 +158,28 @@ super + Return
 super + space
 	dmenu_run
 
-super + o; {t,w,g,c,y,s,e,f}
-	{urxvt,google-chrome,google-chrome,google-chrome,google-chrome --app=http://www.youtube.com/feed/subscriptions,sub,sub,thunar}
+super + o; {t,w,g,c,s,e,f}
+	{urxvt,google-chrome,google-chrome,google-chrome,sub,sub,thunar}
+
+super + o; y
+    google-chrome --app=http://www.youtube.com/feed/subscriptions && \
+    SZ=$(xwininfo -id $(bspc query -W -w) | grep geometry | cut -d ' ' -f 4 | cut -d '+' -f 1) && \ 
+    bspc window -e right -$(echo "$SZ" | cut -d 'x' -f 1) && \
+    bspc window -e right +1200 && \
+    bspc window -e down  -$(echo "$SZ" | cut -d 'x' -f 2) && \
+    bspc window -e down +706 && \
+    bspc window -t locked=on && \
+    bspc window -t private=on
+
+#doesn't work on terminals
+super + y 
+    ID=$(xwininfo | grep -Po "0x[\da-f]+" -m1) && \
+    YSZ=$(xwininfo -id $ID | grep geometry | cut -d ' ' -f 4 | cut -d '+' -f 1) && \
+    bspc window $ID -e right -$(echo "$YSZ" | cut -d 'x' -f 1) && \
+    bspc window $ID -e right +1200 && \
+    bspc window $ID -e down  -$(echo "$YSZ" | cut -d 'x' -f 2) && \
+    bspc window $ID -e down +706 
+
 
 
 ## Reload sxhkd
