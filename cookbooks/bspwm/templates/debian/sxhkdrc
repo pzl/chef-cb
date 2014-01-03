@@ -153,13 +153,13 @@ super + m
 
 ## Application launching
 super + Return
-	terminator
+	urxvt
 
 super + space
 	dmenu_run
 
 super + o; {t,w,g,c,y,s,e,f}
-	{terminator,google-chrome,google-chrome,google-chrome,google-chrome --app=http://www.youtube.com/feed/subscriptions,sub,sub,thunar}
+	{urxvt,google-chrome,google-chrome,google-chrome,google-chrome --app=http://www.youtube.com/feed/subscriptions,sub,sub,thunar}
 
 
 ## Reload sxhkd
