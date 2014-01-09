@@ -11,7 +11,10 @@ walls = [
 	"jLbCzTk.jpg",
 	"lFsPism.jpg",
 	"r6dgeuO.jpg",
-	"yXOMnFM.jpg"
+	"yXOMnFM.jpg",
+	"PmgNXdI.jpg",
+	"dQL1Ea7.jpg",
+	"lqCOd8m.jpg"
 ]
 
 #flatstudio
