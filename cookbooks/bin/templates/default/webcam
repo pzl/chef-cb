@@ -1,0 +1,7 @@
+#!/bin/bash
+src=0
+if [ "$1" != "" ]; then
+    src="$1"
+fi
+
+mplayer -tv driver=v4l2:gain=1:width=640:height=480:device=/dev/video$src:fps=10:outfmt=rgb16 tv://

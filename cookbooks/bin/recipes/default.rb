@@ -12,7 +12,8 @@ scripts = [
 	"pipes",
 	"rain",
 	"ruler",
-	"sauber"
+	"sauber",
+	"webcam"
 ]
 
 scripts.each do |file|
