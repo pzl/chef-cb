@@ -1,0 +1,103 @@
+#!/bin/bash
+
+help="Usage: `basename $0` [OPTS]"
+usevid=false
+start_time="0:0:0"
+for_time="0:0:5"
+size="480x270"
+
+
+while getopts :hi:s:t:f:o: opt; do
+    case "$opt" in
+        h)
+            echo "$help"
+            exit 0
+            ;;
+        \?)
+            echo "$help"
+            echo "Invalid arg: -$OPTARG" >&2
+            exit 1
+            ;;
+        :)
+            echo "$help"
+            echo "-$OPTARG requires an argument" >&2
+            exit 1
+            ;;
+        i)
+            usevid=true
+            input="$OPTARG"
+            ;;
+        s)
+            size="$OPTARG"
+            ;;
+        t)
+            start_time="$OPTARG"
+            ;;
+        f)
+            for_time="$OPTARG"
+            ;;
+        o)
+            gif_out="$OPTARG"
+            ;;
+    esac
+done
+
+#frames=${@:$OPTIND:1}
+#echo "gif file: $gif_out"
+
+if [ "$gif_out" == "" ]; then
+    gif_out=${@:$OPTIND:1}
+fi
+echo "outfile: $gif_out"
+
+
+if $usevid; then
+    if [ "${input:0:4}" == "http" ]; then
+        fn=$(youtube-dl --get-filename $input)
+        if [ -f "$fn" ]; then
+            echo "file exists, not redownloading"
+            input="$fn"
+        else
+            echo "downloading"
+            youtube-dl $input
+            if [ $? -ne 0 ]; then
+                echo "couldn't download video"
+                exit 1
+            fi
+        fi
+    fi
+    ffmpeg -ss $start_time -i "$input" -t $for_time -s $size -f image2 %03d.png
+    sxiv *.png &
+    p="$!"
+    echo -n "Review the images and enter the starting frame number: "
+    read sframe
+    if [ "$sframe" == "" ]; then
+        echo "empty frame, aborting"
+        exit 1
+    fi
+    echo -n "Enter the ending frame number: "
+    read eframe
+    if [ "$eframe" == "" ]; then
+        echo "empty frame, aborting"
+        exit 1
+    fi
+    kill "$p"
+    frames=$(seq -f %03g.png $sframe $eframe)
+    frameskip=$(seq -f %03g.png $sframe 2 $eframe)
+    echo "selected frames: $sframe - $eframe"
+fi
+
+
+#add gimp processing here too
+convert +repage -fuzz 2% -delay 4 -loop 0 $frames -layers OptimizePlus -layers OptimizeTransparency "$gif_out"
+if [ $? -eq 0 ]; then
+    sxiv "$gif_out" &
+fi
+#gifsicle -O3 -k 256 -f $2 > $2.opt
+
+
+#try skip every other frame
+convert +repage -fuzz 2% -delay 4 -loop 0 $frameskip -layers OptimizePlus -layers OptimizeTransparency "$gif_out"
+if [ $? -eq 0 ]; then
+    sxiv "skip-$gif_out" &
+fi

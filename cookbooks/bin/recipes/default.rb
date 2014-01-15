@@ -6,6 +6,7 @@ scripts = [
 	"diam",
 	"gdate",
 	"hipster",
+	"mkgif",
 	"invade",
 	"lamp",
 	"pipes",
