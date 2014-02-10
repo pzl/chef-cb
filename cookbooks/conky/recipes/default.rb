@@ -67,7 +67,7 @@ template location+"conky/scripts/sensors.sh" do
 end
 
 #cron
-template "/etc/cron.d/ip.cron" do
+template "/etc/cron.d/ip" do
 	source "ip.cron"
 	mode 0644
 	owner "root"
