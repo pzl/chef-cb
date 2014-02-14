@@ -6,7 +6,7 @@ execute "install node" do
 		tar -xzf node-v$NODEV.tar.gz
 		cd node-v$NODEV
 		./configure
-		make
+		make -j#{node[:cpu][:total]}
 		make install
 		cd ..
 		rm -rf node-v$NODEV node-v$NODEV.tar.gz

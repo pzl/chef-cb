@@ -33,7 +33,7 @@ end
 execute "install bspwm" do
 	cwd "#{Chef::Config[:file_cache_path]}/bspwm"
 	command <<-EOH
-		make
+		make -j#{node[:cpu][:total]}
 		make install
 	EOH
 	action :nothing
@@ -43,7 +43,7 @@ end
 execute "install sxhkd" do
 	cwd "#{Chef::Config[:file_cache_path]}/sxhkd"
 	command <<-EOH
-		make
+		make -j#{node[:cpu][:total]}
 		make install
 	EOH
 	action :nothing
@@ -53,7 +53,7 @@ end
 execute "install xwinfo" do
 	cwd "#{Chef::Config[:file_cache_path]}/xwinfo"
 	command <<-EOH
-		make
+		make -j#{node[:cpu][:total]}
 		make install
 	EOH
 	action :nothing

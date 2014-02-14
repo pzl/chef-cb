@@ -91,7 +91,7 @@ end
 
 execute "make kicad" do
 	cwd working_tree+"kicad.bzr/build"
-	command "make -j"+node["cpu"]["total"].to_s
+	command "make -j#{node[:cpu][:total]}"
 	action :nothing
 end
 

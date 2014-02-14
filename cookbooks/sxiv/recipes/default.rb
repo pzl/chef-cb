@@ -13,7 +13,7 @@ execute "install sxiv" do
 	cwd "#{Chef::Config[:file_cache_path]}/sxiv"
 	command <<-EOH
 		sed -r --in-place 's/(GIF_LOOP\s+\=\s*)0/\\11/' config.def.h
-		make
+		make -j#{node[:cpu][:total]}
 		make install
 	EOH
 	action :nothing

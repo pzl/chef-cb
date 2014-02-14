@@ -8,7 +8,7 @@ end
 
 execute "build nagad" do
 	cwd "#{Chef::Config[:file_cache_path]}/nagad"
-	command "make && make install"
+	command "make -j#{node[:cpu][:total]} && make install"
 	action :nothing
 	creates "/usr/local/bin/nagad"
 end
@@ -65,7 +65,7 @@ execute "razercfg make" do
 	cwd "#{Chef::Config[:file_cache_path]}/razercfg"
 	command <<-EOH
 		cmake .
-		make
+		make -j#{node[:cpu][:total]}
 		make install
 	EOH
 	action :nothing
