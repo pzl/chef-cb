@@ -1,1 +1,1 @@
-0 */6 * * * <%= @user %> curl ifconfig.me/ip > ~/.config/conky/output/ip
+0 */6 * * * <%= @user %> /usr/bin/dig +short myip.opendns.com @resolver1.opendns.com > /home/<%= @user =>/.config/conky/output/ip
