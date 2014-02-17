@@ -1,6 +1,6 @@
 #get
 sublime_2_url = "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64.tar.bz2"
-sublime_3_url = "http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3047_x64.tar.bz2"
+sublime_3_url = "http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3059_x64.tar.bz2"
 sublime_3_deb = "http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3047_amd64.deb"
 
 execute "sublime-text2" do
