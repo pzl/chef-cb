@@ -193,7 +193,7 @@
 [layouts]
   [[default]]
     [[[child1]]]
-      profile = moodyblue
+      profile = murky
       type = Terminal
       parent = window0
     [[[window0]]]
