@@ -153,13 +153,13 @@ super + m
 
 ## Application launching
 super + Return
-	urxvt
+	terminator
 
 super + space
 	dmenu_run
 
 super + o; {t,w,g,c,s,e,f}
-	{urxvt,google-chrome,google-chrome,google-chrome,sub,sub,thunar}
+	{terminator,google-chrome,google-chrome,google-chrome,sub,sub,thunar}
 
 super + o; y
     google-chrome --app=http://www.youtube.com/feed/subscriptions && \

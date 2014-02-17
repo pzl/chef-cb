@@ -40,7 +40,7 @@ case "$i" in
 	m|M) #manual
 		INST="";;
 	*|d|D)
-		INST=$(echo "$COOKBOOKS_ALL" | sed -E '/(calibre|avr|gifsicle|kicad|lamp|latex|mojo|mongo|ncdu|nginx|saleae|sensors|vagrant|wireshark)/d');;
+		INST=$(echo "$COOKBOOKS_ALL" | sed -E '/(calibre|avr|gifsicle|kicad|lamp|latex|mojo|mongo|ncdu|nginx|saleae|sensors|vagrant|urxvt|wireshark)/d');;
 esac
 
 cat <<EOH > node.json
