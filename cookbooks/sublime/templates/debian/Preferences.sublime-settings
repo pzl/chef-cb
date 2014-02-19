@@ -1,0 +1,56 @@
+{
+	"__theme": "Glacier.sublime-theme",
+	"_ensure_newline_at_eof_on_save": true,
+	"_theme": "Flatland Dark.sublime-theme",
+	"_translate_tabs_to_spaces": true,
+	"_trim_tailing_white_space_on_save": true,
+	"always_show_minimap_viewport": true,
+	"binary_file_patterns":
+	[
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip",
+		"*.tar.gz",
+		"a.out"
+	],
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/Theme - Centurion/Galea.tmTheme",
+	"copy_with_empty_selection": false,
+	"file_exclude_patterns":
+	[
+	],
+	"flatland_sidebar_tree_small": true,
+	"flatland_square_tabs": false,
+	"folder_exclude_patterns":
+	[
+	],
+	"font_options":
+	[
+		"subpixel_antialias"
+	],
+	"font_size": 9,
+	"ignored_packages":
+	[
+	],
+	"margin": 2,
+	"rulers":
+	[
+		80
+	],
+	"show_encoding": true,
+	"show_line_endings": true,
+	"show_panel_on_build": false,
+	"spell_check": true,
+	"theme": "Centurion.sublime-theme",
+	"word_wrap": true
+}

@@ -1,0 +1,8 @@
+{
+	"extensions":
+	[
+		"c"
+	],
+	"ensure_newline_at_eof_on_save": true,
+	"trim_tailing_white_space_on_save": true
+}

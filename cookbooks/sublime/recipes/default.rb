@@ -6,6 +6,15 @@ package_control = "https://sublime.wbond.net/Package%20Control.sublime-package"
 subpath = "#{node[:user][:home]}/.config/sublime-text-"
 
 
+settings = [
+	"Package Control.sublime-settings",
+	"C.sublime-settings",
+	"C++.sublime-settings",
+	"Preferences.sublime-settings",
+	"Default (Linux).sublime-keymap"
+]
+
+
 execute "sublime-text2" do
 	cwd "#{node[:user][:home]}/bin"
 	command <<-EOH
@@ -88,14 +97,16 @@ remote_file "#{subpath}3/Installed Packages/Package Control.sublime-package" do
 	action :create_if_missing
 	notifies :run, "execute[copy pc]", :immediately
 end
-#pc packages to install on launch
-template "#{subpath}3/Packages/User/Package Control.sublime-settings" do
-	source "Package Control.sublime-settings"
-	mode 0644
-	owner node[:user][:name]
-	group node[:user][:name]
-	action :create_if_missing
+#settings!
+settings.each do |s|
+	template subpath+'3/Packages/User/'+s do
+		source s
+		owner node[:user][:name]
+		group node[:user][:name]
+		mode 0644
+		backup false
+	end
 end
 
 #@todo
-#configs, workspaces, etc
+#workspaces
