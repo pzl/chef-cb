@@ -86,6 +86,14 @@ remote_file "#{node[:user][:home]}/.config/sublime_text_3/Installed Packages/Pac
 	action :create_if_missing
 	notifies :run, "execute[copy pc]", :immediately
 end
+#pc packages to install on launch
+template "#{node[:user][:home]}/.config/sublime-text-3/Packages/User/Package Control.sublime-settings" do
+	source "Package Control.sublime-settings"
+	mode 0644
+	owner node[:user][:name]
+	group node[:user][:name]
+	action :create_if_missing
+end
 
 #@todo
 #configs, workspaces, etc
