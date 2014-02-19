@@ -2,6 +2,7 @@
 sublime_2_url = "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64.tar.bz2"
 sublime_3_url = "http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3059_x64.tar.bz2"
 sublime_3_deb = "http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3047_amd64.deb"
+package_control = "https://sublime.wbond.net/Package%20Control.sublime-package"
 
 execute "sublime-text2" do
 	cwd "#{node[:user][:home]}/bin"
@@ -76,7 +77,15 @@ template "#{node[:user][:home]}/.config/sublime-text-2/Settings/License.sublime_
 	action :create_if_missing
 end
 
+#package control itself
+remote_file "#{node[:user][:home]}/.config/sublime_text_3/Installed Packages/Package Control.sublime-package" do
+	source package_control
+	owner node[:user][:name]
+	group node[:user][:name]
+	mode 0644
+	action :create_if_missing
+	notifies :run, "execute[copy pc]", :immediately
+end
+
 #@todo
-#packages -- that would be a doozy
-#http://stackoverflow.com/questions/19529999/add-package-control-in-sublime-text-3-through-the-command-line
 #configs, workspaces, etc
