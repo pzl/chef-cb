@@ -3,6 +3,8 @@ sublime_2_url = "http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64
 sublime_3_url = "http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3059_x64.tar.bz2"
 sublime_3_deb = "http://c758482.r82.cf2.rackcdn.com/sublime-text_build-3047_amd64.deb"
 package_control = "https://sublime.wbond.net/Package%20Control.sublime-package"
+subpath = "#{node[:user][:home]}/.config/sublime-text-"
+
 
 execute "sublime-text2" do
 	cwd "#{node[:user][:home]}/bin"
@@ -17,8 +19,8 @@ execute "sublime-text2" do
 		chown -R #{node[:user][:name]} "Sublime Text 2"
 		"Sublime Text 2/sublime_text" &
 		sleep 1s && killall sublime_text
-		mv /root/.config/sublime-text-2 #{node[:user][:home]}/.config/sublime-text-2
-		chown -R #{node[:user][:name]} #{node[:user][:home]}/.config/sublime-text-2
+		mv /root/.config/sublime-text-2 #{subpath}2
+		chown -R #{node[:user][:name]} #{subpath}2
 	EOH
 	creates "#{node[:user][:home]}/bin/Sublime\ Text\ 2/sublime_text"
 end
@@ -37,8 +39,8 @@ execute "sublime-text3" do
 		chown -R #{node[:user][:name]} "sublime_text_3"
 		"sublime_text_3/sublime_text" &
 		sleep 1s && killall sublime_text
-		mv /root/.config/sublime-text-3 #{node[:user][:home]}/.config/sublime-text-3
-		chown -R #{node[:user][:name]} #{node[:user][:home]}/.config/sublime-text-3
+		mv /root/.config/sublime-text-3 #{subpath}3
+		chown -R #{node[:user][:name]} #{subpath}3
 	EOH
 	creates "#{node[:user][:home]}/bin/sublime_text_3/sublime_text"
 end
@@ -69,7 +71,7 @@ end
 #we own a single-user license (available upon request!)
 #but publishing our license to github is a no-no
 #can't always depend on automated private things
-template "#{node[:user][:home]}/.config/sublime-text-2/Settings/License.sublime_license" do
+template "#{subpath}2/Settings/License.sublime_license" do
 	source "sublime_license"
 	mode 0600
 	owner node[:user][:name]
@@ -78,7 +80,7 @@ template "#{node[:user][:home]}/.config/sublime-text-2/Settings/License.sublime_
 end
 
 #package control itself
-remote_file "#{node[:user][:home]}/.config/sublime_text_3/Installed Packages/Package Control.sublime-package" do
+remote_file "#{subpath}3/Installed Packages/Package Control.sublime-package" do
 	source package_control
 	owner node[:user][:name]
 	group node[:user][:name]
@@ -87,7 +89,7 @@ remote_file "#{node[:user][:home]}/.config/sublime_text_3/Installed Packages/Pac
 	notifies :run, "execute[copy pc]", :immediately
 end
 #pc packages to install on launch
-template "#{node[:user][:home]}/.config/sublime-text-3/Packages/User/Package Control.sublime-settings" do
+template "#{subpath}3/Packages/User/Package Control.sublime-settings" do
 	source "Package Control.sublime-settings"
 	mode 0644
 	owner node[:user][:name]
