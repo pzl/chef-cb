@@ -158,8 +158,8 @@ super + Return
 super + space
 	dmenu_run
 
-super + o; {t,w,g,c,s,e,f}
-	{terminator,google-chrome,google-chrome,google-chrome,sub,sub,thunar}
+super + o; {t,w,g,c,2,s,e,f}
+	{terminator,google-chrome,google-chrome,google-chrome,sub2,sub,sub,thunar}
 
 super + o; y
     google-chrome --app=http://www.youtube.com/feed/subscriptions && \

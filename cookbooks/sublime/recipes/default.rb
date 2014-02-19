@@ -43,7 +43,7 @@ execute "sublime-text3" do
 end
 
 
-template "#{node[:user][:home]}/bin/sub" do
+template "#{node[:user][:home]}/bin/sub2" do
 	source "sub"
 	mode 0755
 	owner node[:user][:name]
@@ -54,7 +54,7 @@ template "#{node[:user][:home]}/bin/sub" do
 	})
 end
 
-template "#{node[:user][:home]}/bin/sub3" do
+template "#{node[:user][:home]}/bin/sub" do
 	source "sub"
 	mode 0755
 	owner node[:user][:name]
