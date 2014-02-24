@@ -15,11 +15,19 @@
     pager = true
 [alias]
     s = status
+    ss = status -u -s #short-status
     co = checkout
     cm = commit
     cma = commit -a
     com = checkout master
     new = checkout -b
     l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(blue)- %an, %C(bold black)%ar%Creset'
+    laa = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(blue)- %an, %C(bold black)%ar%Creset' --all
+    la = log --pretty=oneline --abbrev-commit --graph --decorate --all
     ll = log --oneline --stat --graph
     d = diff --color-words
+    dw = diff --word-diff
+    who = shortlog -sn --
+    pushnotes = !sh -c 'git push $1 refs/notes/*' -
+    fetchnotes = !sh -c 'git fetch $1 refs/notes/*:refs/notes/*' -
+
