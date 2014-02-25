@@ -31,3 +31,5 @@
     pushnotes = !sh -c 'git push $1 refs/notes/*' -
     fetchnotes = !sh -c 'git fetch $1 refs/notes/*:refs/notes/*' -
 
+[push]
+	default = simple
