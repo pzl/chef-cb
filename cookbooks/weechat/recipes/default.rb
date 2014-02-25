@@ -1,38 +1,4 @@
-package 'ruby1.9.1-dev'
-package 'libssl-dev'
-gem_package 'camper_van'
-gem_package 'eventmachine'
-
-#camper_van/lib/camper_van/channel.rb => paste handling
-
-
-cookbook_file "backports-weechat" do
-	path "/etc/apt/sources.list.d/wheezy-backports.list"
-	source "wheezy-backports.list"
-	cookbook "apt"
-	mode 0644
-	owner "root"
-	group "root"
-	action :create_if_missing
-	notifies :run, "execute[apt-update-weechat]", :immediately
-end
-
-execute "apt-update-weechat" do
-	command "apt-get update"
-	action :nothing
-end
-
-execute "apt-install-weechat" do
-	command "apt-get -q -y install -t wheezy-backports weechat"
-	action :run
-	creates "/usr/bin/weechat"
-end
-
-#bug: tries to pre-fetch version from stable repos
-#package "weechat" do
-#	options "-t wheezy-backports"
-#end
-
+pacakge 'weechat'
 
 #todo move to .config/weechat using weechat -d (need to set alias in bash from here?)
 directory "#{node[:user][:home]}/.weechat" do
@@ -77,7 +43,7 @@ template "#{node[:user][:home]}/.weechat/weechat.conf" do
 	group node[:user][:name]
 	backup false
 	variables({
-		:nick => node[:user][:name] #change
+		:nick => "pzl" #set in attributes
 	})
 end
 template "#{node[:user][:home]}/.weechat/buffers.conf" do
@@ -94,12 +60,6 @@ template "#{node[:user][:home]}/.weechat/irc.conf" do
 	group node[:user][:name]
 	backup false
 	variables({
-		:nick => node[:user][:name], #change
-		:domain => "sample",
-		:key => "1234567890"
+		:nick => "pzl" #have bootstrap prompt for password?
 	})
 end
-
-#more config
-#http://dotshare.it/dots/140/
-#http://dotshare.it/dots/395/
