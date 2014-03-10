@@ -2,6 +2,7 @@ package 'gcc-avr'
 package 'avr-libc'
 package 'binutils-avr'
 package 'avrdude'
+package 'simulavr'
 
 template "#{node[:user][:home]}/.avrduderc" do
 	source ".avrduderc"
