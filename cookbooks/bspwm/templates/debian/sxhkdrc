@@ -88,6 +88,11 @@ super + minus
 super + {comma,period}
 	bspc desktop -C {backward,forward}
 
+# Desktop rotation
+super + shift + {comma,period}
+	bspc desktop -R {90,270}
+
+
 # monocle mode
 #super + shift + l
 #	bspc desktop -l next
