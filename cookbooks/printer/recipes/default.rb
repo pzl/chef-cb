@@ -18,6 +18,9 @@ package 'libavahi-compat-libdnssd1'
 
 
 #@todo: arduino env for flashing marlin
+#copy arduinoaddons to arduino libraries folder
+#add settings/changes to marlin
+#edit pins.h BEEPER 79 to BEEPER -1 to save my ears
 
 
 git "#{Chef::Config[:file_cache_path]}/Printrun" do
