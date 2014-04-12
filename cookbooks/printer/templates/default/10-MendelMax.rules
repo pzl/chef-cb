@@ -1,4 +1,4 @@
 # 3D printer
 # This file should be installed to /etc/udev/rules.d so that you can access the printer without being root
 
-SUBSYSTEMS=="usb", ATTRS{idVendor}=="27b1", ATTRS{idProduct}=="0001", SYMLINK+="printer", GROUP="<%= @group %>"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="27b1", ATTRS{idProduct}=="0001", MODE="0777", SYMLINK+="printer"
