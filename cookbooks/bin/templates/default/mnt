@@ -29,15 +29,7 @@ done
 PART=${@:$OPTIND:1}
 DIR=${@:$OPTIND+1:1}
 
-if [ ! -b "$PART" ]; then
-    echo "Error: '$PART' is not a valid block device"
-    echo "$help"
-    exit 1
-fi
-
-PARTTYPE=$(blkid | grep "$PART" | cut -d' ' -f4 | cut -d= -f2 | sed "s/\"//g")
-
-if [ -d "$DIR" ]; then
+domount(){
     sudo chown 1000:1000 "$DIR"
     case "$PARTTYPE" in
         ntfs|ntfs-3g)
@@ -46,17 +38,26 @@ if [ -d "$DIR" ]; then
         *)
             sudo mount -t "$PARTTYPE" "$PART" "$DIR"
             ;;
-        esac
+    esac
+}
+
+if [ ! -b "$PART" ]; then
+    echo "Error: '$PART' is not a valid block device"
+    echo "$help"
+    exit 1
+fi
+
+PARTTYPE=$(blkid | grep "$PART" | grep -Po 'TYPE="\w+"' | sed -r 's/(TYPE|[="])//g')
+
+if [ -d "$DIR" ]; then
+    domount
 else
     if $nocreate; then
         echo "Error: '$DIR' does not already exist, and 'no create' flag was present"
         exit 1
     else
         sudo mkdir "$DIR"
-        sudo chown 1000:1000 "$DIR"
-        sudo mount -o uid=1000,gid=1000,dmask=027,fmask=137 -t ntfs-3g "$PART" "$DIR"
+        domount
     fi
 
 fi
-
-
